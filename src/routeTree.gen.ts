@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as FamilySupportRouteImport } from './routes/family-support'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
@@ -39,6 +40,11 @@ const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsRoute = LocationsRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByTo {
   '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/family-support'
     | '/locations'
+    | '/privacy'
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/family-support'
     | '/locations'
+    | '/privacy'
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/family-support'
     | '/locations'
+    | '/privacy'
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
@@ -229,6 +241,7 @@ export interface RootRouteChildren {
   DisclaimerRoute: typeof DisclaimerRoute
   FamilySupportRoute: typeof FamilySupportRouteWithChildren
   LocationsRoute: typeof LocationsRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
   ProgramsRoute: typeof ProgramsRoute
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
   SuccessStoriesRoute: typeof SuccessStoriesRoute
@@ -255,6 +268,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations': {
@@ -420,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   DisclaimerRoute: DisclaimerRoute,
   FamilySupportRoute: FamilySupportRouteWithChildren,
   LocationsRoute: LocationsRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
   ProgramsRoute: ProgramsRoute,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
   SuccessStoriesRoute: SuccessStoriesRoute,
