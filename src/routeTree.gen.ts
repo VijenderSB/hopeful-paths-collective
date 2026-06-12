@@ -14,6 +14,7 @@ import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitat
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as FamilySupportRouteImport } from './routes/family-support'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -48,6 +49,11 @@ const LocationsRoute = LocationsRouteImport.update({
 const FamilySupportRoute = FamilySupportRouteImport.update({
   id: '/family-support',
   path: '/family-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -143,6 +151,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -162,6 +171,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/conditions'
     | '/contact'
+    | '/disclaimer'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -179,6 +189,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/conditions'
     | '/contact'
+    | '/disclaimer'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -196,6 +207,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/conditions'
     | '/contact'
+    | '/disclaimer'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -214,6 +226,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ConditionsRoute: typeof ConditionsRouteWithChildren
   ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   FamilySupportRoute: typeof FamilySupportRouteWithChildren
   LocationsRoute: typeof LocationsRouteWithChildren
   ProgramsRoute: typeof ProgramsRoute
@@ -256,6 +269,13 @@ declare module '@tanstack/react-router' {
       path: '/family-support'
       fullPath: '/family-support'
       preLoaderRoute: typeof FamilySupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -397,6 +417,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ConditionsRoute: ConditionsRouteWithChildren,
   ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
   FamilySupportRoute: FamilySupportRouteWithChildren,
   LocationsRoute: LocationsRouteWithChildren,
   ProgramsRoute: ProgramsRoute,
