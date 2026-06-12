@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as FamilySupportRouteImport } from './routes/family-support'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as AboutRouteImport } from './routes/about'
@@ -27,6 +28,11 @@ const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FamilySupportRoute = FamilySupportRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRoute
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conditions'
     | '/family-support'
+    | '/locations'
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conditions'
     | '/family-support'
+    | '/locations'
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conditions'
     | '/family-support'
+    | '/locations'
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConditionsRoute: typeof ConditionsRouteWithChildren
   FamilySupportRoute: typeof FamilySupportRouteWithChildren
+  LocationsRoute: typeof LocationsRoute
   ProgramsRoute: typeof ProgramsRoute
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
 }
@@ -159,6 +172,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/family-support': {
@@ -256,6 +276,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ConditionsRoute: ConditionsRouteWithChildren,
   FamilySupportRoute: FamilySupportRouteWithChildren,
+  LocationsRoute: LocationsRoute,
   ProgramsRoute: ProgramsRoute,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
 }
