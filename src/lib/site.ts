@@ -118,7 +118,7 @@ export const PROGRAMS = [
   },
 ];
 
-export const HOME_FAQ = [
+export const HOME_FAQ: [string, string][] = [
   ["What is DeAddictify?", "DeAddictify is an affordable alcohol & drug de-addiction, rehabilitation and recovery support platform serving Delhi NCR. We provide psychiatrist-led treatment guidance, admission assistance and family counselling."],
   ["Is DeAddictify a rehab centre?", "DeAddictify is a treatment facilitation and recovery support platform. Treatment is delivered through affiliated rehabilitation, psychiatric and de-addiction partners after clinical assessment."],
   ["How do I know if rehab is required?", "If alcohol or drug use is affecting health, work, relationships, finances or causing withdrawal symptoms, a clinical assessment is recommended. Book a free confidential counselling to know more."],
@@ -133,7 +133,7 @@ export const HOME_FAQ = [
   ["Are programs available in Delhi NCR?", "Yes. We cover Delhi, Noida, Greater Noida, Ghaziabad, Faridabad and Gurugram."],
 ];
 
-export const GLOBAL_FAQ = [
+export const GLOBAL_FAQ: [string, string][] = [
   ["What is addiction?", "Addiction is a chronic medical condition involving compulsive substance use despite harmful consequences. It is treatable with structured care."],
   ["What are signs of addiction?", "Loss of control, tolerance, withdrawal, neglected responsibilities, secrecy, mood changes and continued use despite harm."],
   ["When is rehab required?", "When outpatient efforts fail, withdrawal risk is high, or daily functioning is impaired. A clinical assessment confirms the right level of care."],
