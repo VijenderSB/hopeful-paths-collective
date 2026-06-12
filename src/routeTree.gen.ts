@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConditionsRoute = ConditionsRouteImport.update({
   id: '/conditions',
   path: '/conditions',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
+  '/programs': typeof ProgramsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
+  '/programs': typeof ProgramsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
 }
 export interface FileRoutesById {
@@ -52,24 +60,39 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
+  '/programs': typeof ProgramsRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/conditions' | '/conditions/$slug'
+  fullPaths: '/' | '/about' | '/conditions' | '/programs' | '/conditions/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/conditions' | '/conditions/$slug'
-  id: '__root__' | '/' | '/about' | '/conditions' | '/conditions/$slug'
+  to: '/' | '/about' | '/conditions' | '/programs' | '/conditions/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/conditions'
+    | '/programs'
+    | '/conditions/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ConditionsRoute: typeof ConditionsRouteWithChildren
+  ProgramsRoute: typeof ProgramsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/conditions': {
       id: '/conditions'
       path: '/conditions'
@@ -117,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ConditionsRoute: ConditionsRouteWithChildren,
+  ProgramsRoute: ProgramsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
