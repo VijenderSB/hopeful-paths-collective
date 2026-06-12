@@ -14,6 +14,7 @@ import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitat
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as FamilySupportRouteImport } from './routes/family-support'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
@@ -47,6 +48,11 @@ const LocationsRoute = LocationsRouteImport.update({
 const FamilySupportRoute = FamilySupportRouteImport.update({
   id: '/family-support',
   path: '/family-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConditionsRoute = ConditionsRouteImport.update({
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -117,6 +124,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -134,6 +142,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
@@ -152,6 +161,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/conditions'
+    | '/contact'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/conditions'
+    | '/contact'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/conditions'
+    | '/contact'
     | '/family-support'
     | '/locations'
     | '/programs'
@@ -201,6 +213,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
   ConditionsRoute: typeof ConditionsRouteWithChildren
+  ContactRoute: typeof ContactRoute
   FamilySupportRoute: typeof FamilySupportRouteWithChildren
   LocationsRoute: typeof LocationsRouteWithChildren
   ProgramsRoute: typeof ProgramsRoute
@@ -243,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/family-support'
       fullPath: '/family-support'
       preLoaderRoute: typeof FamilySupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/conditions': {
@@ -376,6 +396,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
   ConditionsRoute: ConditionsRouteWithChildren,
+  ContactRoute: ContactRoute,
   FamilySupportRoute: FamilySupportRouteWithChildren,
   LocationsRoute: LocationsRouteWithChildren,
   ProgramsRoute: ProgramsRoute,
