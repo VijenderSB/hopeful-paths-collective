@@ -22,6 +22,7 @@ import { Route as RehabilitationServicesSlugRouteImport } from './routes/rehabil
 import { Route as LocationsCityRouteImport } from './routes/locations.$city'
 import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
   id: '/success-stories',
@@ -89,17 +90,23 @@ const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ConditionsRoute,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -108,13 +115,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -124,13 +132,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/conditions': typeof ConditionsRouteWithChildren
   '/family-support': typeof FamilySupportRouteWithChildren
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -187,7 +199,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ConditionsRoute: typeof ConditionsRouteWithChildren
   FamilySupportRoute: typeof FamilySupportRouteWithChildren
   LocationsRoute: typeof LocationsRouteWithChildren
@@ -289,8 +301,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConditionsSlugRouteImport
       parentRoute: typeof ConditionsRoute
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ConditionsRouteChildren {
   ConditionsSlugRoute: typeof ConditionsSlugRoute
@@ -345,7 +374,7 @@ const RehabilitationServicesRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ConditionsRoute: ConditionsRouteWithChildren,
   FamilySupportRoute: FamilySupportRouteWithChildren,
   LocationsRoute: LocationsRouteWithChildren,
