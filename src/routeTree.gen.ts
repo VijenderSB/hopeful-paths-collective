@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
 import { Route as ProgramsRouteImport } from './routes/programs'
@@ -27,6 +28,11 @@ import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
   id: '/success-stories',
   path: '/success-stories',
@@ -127,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
@@ -146,6 +153,7 @@ export interface FileRoutesByTo {
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
@@ -166,6 +174,7 @@ export interface FileRoutesById {
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
@@ -187,6 +196,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/terms'
     | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/terms'
     | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/success-stories'
+    | '/terms'
     | '/blog/$slug'
     | '/conditions/$slug'
     | '/family-support/$slug'
@@ -245,10 +257,18 @@ export interface RootRouteChildren {
   ProgramsRoute: typeof ProgramsRoute
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
   SuccessStoriesRoute: typeof SuccessStoriesRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/success-stories': {
       id: '/success-stories'
       path: '/success-stories'
@@ -444,6 +464,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgramsRoute: ProgramsRoute,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
   SuccessStoriesRoute: SuccessStoriesRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
