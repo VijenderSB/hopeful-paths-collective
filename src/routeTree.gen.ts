@@ -9,38 +9,363 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as LocationsRouteImport } from './routes/locations'
+import { Route as FamilySupportRouteImport } from './routes/family-support'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConditionsRouteImport } from './routes/conditions'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RehabilitationServicesSlugRouteImport } from './routes/rehabilitation-services.$slug'
+import { Route as LocationsCityRouteImport } from './routes/locations.$city'
+import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$slug'
+import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
+  id: '/success-stories',
+  path: '/success-stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
+  id: '/rehabilitation-services',
+  path: '/rehabilitation-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilySupportRoute = FamilySupportRouteImport.update({
+  id: '/family-support',
+  path: '/family-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConditionsRoute = ConditionsRouteImport.update({
+  id: '/conditions',
+  path: '/conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RehabilitationServicesSlugRoute =
+  RehabilitationServicesSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => RehabilitationServicesRoute,
+  } as any)
+const LocationsCityRoute = LocationsCityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
+  getParentRoute: () => LocationsRoute,
+} as any)
+const FamilySupportSlugRoute = FamilySupportSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => FamilySupportRoute,
+} as any)
+const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ConditionsRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/programs': typeof ProgramsRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
+  '/locations/$city': typeof LocationsCityRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/programs': typeof ProgramsRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
+  '/locations/$city': typeof LocationsCityRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/conditions': typeof ConditionsRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
+  '/locations': typeof LocationsRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/programs': typeof ProgramsRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/success-stories': typeof SuccessStoriesRoute
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
+  '/locations/$city': typeof LocationsCityRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/conditions'
+    | '/contact'
+    | '/disclaimer'
+    | '/family-support'
+    | '/locations'
+    | '/privacy'
+    | '/programs'
+    | '/rehabilitation-services'
+    | '/sitemap.xml'
+    | '/success-stories'
+    | '/terms'
+    | '/blog/$slug'
+    | '/conditions/$slug'
+    | '/family-support/$slug'
+    | '/locations/$city'
+    | '/rehabilitation-services/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/conditions'
+    | '/contact'
+    | '/disclaimer'
+    | '/family-support'
+    | '/locations'
+    | '/privacy'
+    | '/programs'
+    | '/rehabilitation-services'
+    | '/sitemap.xml'
+    | '/success-stories'
+    | '/terms'
+    | '/blog/$slug'
+    | '/conditions/$slug'
+    | '/family-support/$slug'
+    | '/locations/$city'
+    | '/rehabilitation-services/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/conditions'
+    | '/contact'
+    | '/disclaimer'
+    | '/family-support'
+    | '/locations'
+    | '/privacy'
+    | '/programs'
+    | '/rehabilitation-services'
+    | '/sitemap.xml'
+    | '/success-stories'
+    | '/terms'
+    | '/blog/$slug'
+    | '/conditions/$slug'
+    | '/family-support/$slug'
+    | '/locations/$city'
+    | '/rehabilitation-services/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  ConditionsRoute: typeof ConditionsRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FamilySupportRoute: typeof FamilySupportRouteWithChildren
+  LocationsRoute: typeof LocationsRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
+  ProgramsRoute: typeof ProgramsRoute
+  RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SuccessStoriesRoute: typeof SuccessStoriesRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/success-stories': {
+      id: '/success-stories'
+      path: '/success-stories'
+      fullPath: '/success-stories'
+      preLoaderRoute: typeof SuccessStoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rehabilitation-services': {
+      id: '/rehabilitation-services'
+      path: '/rehabilitation-services'
+      fullPath: '/rehabilitation-services'
+      preLoaderRoute: typeof RehabilitationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family-support': {
+      id: '/family-support'
+      path: '/family-support'
+      fullPath: '/family-support'
+      preLoaderRoute: typeof FamilySupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conditions': {
+      id: '/conditions'
+      path: '/conditions'
+      fullPath: '/conditions'
+      preLoaderRoute: typeof ConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +373,120 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rehabilitation-services/$slug': {
+      id: '/rehabilitation-services/$slug'
+      path: '/$slug'
+      fullPath: '/rehabilitation-services/$slug'
+      preLoaderRoute: typeof RehabilitationServicesSlugRouteImport
+      parentRoute: typeof RehabilitationServicesRoute
+    }
+    '/locations/$city': {
+      id: '/locations/$city'
+      path: '/$city'
+      fullPath: '/locations/$city'
+      preLoaderRoute: typeof LocationsCityRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/family-support/$slug': {
+      id: '/family-support/$slug'
+      path: '/$slug'
+      fullPath: '/family-support/$slug'
+      preLoaderRoute: typeof FamilySupportSlugRouteImport
+      parentRoute: typeof FamilySupportRoute
+    }
+    '/conditions/$slug': {
+      id: '/conditions/$slug'
+      path: '/$slug'
+      fullPath: '/conditions/$slug'
+      preLoaderRoute: typeof ConditionsSlugRouteImport
+      parentRoute: typeof ConditionsRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface ConditionsRouteChildren {
+  ConditionsSlugRoute: typeof ConditionsSlugRoute
+}
+
+const ConditionsRouteChildren: ConditionsRouteChildren = {
+  ConditionsSlugRoute: ConditionsSlugRoute,
+}
+
+const ConditionsRouteWithChildren = ConditionsRoute._addFileChildren(
+  ConditionsRouteChildren,
+)
+
+interface FamilySupportRouteChildren {
+  FamilySupportSlugRoute: typeof FamilySupportSlugRoute
+}
+
+const FamilySupportRouteChildren: FamilySupportRouteChildren = {
+  FamilySupportSlugRoute: FamilySupportSlugRoute,
+}
+
+const FamilySupportRouteWithChildren = FamilySupportRoute._addFileChildren(
+  FamilySupportRouteChildren,
+)
+
+interface LocationsRouteChildren {
+  LocationsCityRoute: typeof LocationsCityRoute
+}
+
+const LocationsRouteChildren: LocationsRouteChildren = {
+  LocationsCityRoute: LocationsCityRoute,
+}
+
+const LocationsRouteWithChildren = LocationsRoute._addFileChildren(
+  LocationsRouteChildren,
+)
+
+interface RehabilitationServicesRouteChildren {
+  RehabilitationServicesSlugRoute: typeof RehabilitationServicesSlugRoute
+}
+
+const RehabilitationServicesRouteChildren: RehabilitationServicesRouteChildren =
+  {
+    RehabilitationServicesSlugRoute: RehabilitationServicesSlugRoute,
+  }
+
+const RehabilitationServicesRouteWithChildren =
+  RehabilitationServicesRoute._addFileChildren(
+    RehabilitationServicesRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BlogRoute: BlogRouteWithChildren,
+  ConditionsRoute: ConditionsRouteWithChildren,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FamilySupportRoute: FamilySupportRouteWithChildren,
+  LocationsRoute: LocationsRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
+  ProgramsRoute: ProgramsRoute,
+  RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SuccessStoriesRoute: SuccessStoriesRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

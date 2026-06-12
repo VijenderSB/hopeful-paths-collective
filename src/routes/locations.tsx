@@ -1,0 +1,46 @@
+import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
+import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
+import { CITIES } from "@/lib/site";
+import { MapPin, ArrowRight } from "lucide-react";
+
+export const Route = createFileRoute("/locations")({
+  head: () => ({
+    meta: [
+      { title: "Delhi NCR De-Addiction Locations | DeAddictify" },
+      { name: "description", content: "De-addiction & rehab centres across Delhi, Noida, Greater Noida, Ghaziabad, Faridabad and Gurugram. Affordable, psychiatrist-led care." },
+      { property: "og:title", content: "Delhi NCR Locations | DeAddictify" },
+      { property: "og:description", content: "Find affordable de-addiction help in your city across Delhi NCR." },
+      { property: "og:url", content: "/locations" },
+    ],
+    links: [{ rel: "canonical", href: "/locations" }],
+  }),
+  component: LocationsLayout,
+});
+
+function LocationsLayout() {
+  const matches = useMatches();
+  if (matches.some((m) => m.routeId === "/locations/$city")) return <Outlet />;
+  return (
+    <>
+      <PageHero eyebrow="Delhi NCR Coverage" title="De-Addiction Across Delhi NCR" subtitle="Affordable de-addiction and rehabilitation programs in every major Delhi NCR city." />
+      <section className="container-page py-16">
+        <SectionHeading title="Choose Your City" />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {CITIES.map((c) => (
+            <Link key={c.slug} to="/locations/$city" params={{ city: c.slug }} className="group rounded-2xl border border-border bg-card p-6 card-hover flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-soft text-success-foreground"><MapPin className="h-6 w-6" /></div>
+                <div>
+                  <div className="text-lg font-semibold text-primary">{c.name}</div>
+                  <div className="text-xs text-muted-foreground">De-addiction & rehab</div>
+                </div>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-teal" />
+            </Link>
+          ))}
+        </div>
+      </section>
+      <FinalCTA />
+    </>
+  );
+}
