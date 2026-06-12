@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as LocationsRouteImport } from './routes/locations'
@@ -21,6 +22,11 @@ import { Route as LocationsCityRouteImport } from './routes/locations.$city'
 import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
+const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
+  id: '/success-stories',
+  path: '/success-stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
   id: '/rehabilitation-services',
   path: '/rehabilitation-services',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/success-stories': typeof SuccessStoriesRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/success-stories': typeof SuccessStoriesRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/locations': typeof LocationsRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/success-stories': typeof SuccessStoriesRoute
   '/conditions/$slug': typeof ConditionsSlugRoute
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/programs'
     | '/rehabilitation-services'
+    | '/success-stories'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/programs'
     | '/rehabilitation-services'
+    | '/success-stories'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/programs'
     | '/rehabilitation-services'
+    | '/success-stories'
     | '/conditions/$slug'
     | '/family-support/$slug'
     | '/locations/$city'
@@ -168,10 +180,18 @@ export interface RootRouteChildren {
   LocationsRoute: typeof LocationsRouteWithChildren
   ProgramsRoute: typeof ProgramsRoute
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
+  SuccessStoriesRoute: typeof SuccessStoriesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/success-stories': {
+      id: '/success-stories'
+      path: '/success-stories'
+      fullPath: '/success-stories'
+      preLoaderRoute: typeof SuccessStoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rehabilitation-services': {
       id: '/rehabilitation-services'
       path: '/rehabilitation-services'
@@ -310,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsRoute: LocationsRouteWithChildren,
   ProgramsRoute: ProgramsRoute,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
+  SuccessStoriesRoute: SuccessStoriesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
