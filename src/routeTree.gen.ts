@@ -14,6 +14,7 @@ import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RehabilitationServicesSlugRouteImport } from './routes/rehabilitation-services.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
 const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
@@ -41,6 +42,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RehabilitationServicesSlugRoute =
+  RehabilitationServicesSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => RehabilitationServicesRoute,
+  } as any)
 const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -52,16 +59,18 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/programs': typeof ProgramsRoute
-  '/rehabilitation-services': typeof RehabilitationServicesRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/programs': typeof ProgramsRoute
-  '/rehabilitation-services': typeof RehabilitationServicesRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +78,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
   '/programs': typeof ProgramsRoute
-  '/rehabilitation-services': typeof RehabilitationServicesRoute
+  '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +91,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/rehabilitation-services/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +100,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/rehabilitation-services/$slug'
   id:
     | '__root__'
     | '/'
@@ -97,6 +109,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/rehabilitation-services/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,7 +117,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConditionsRoute: typeof ConditionsRouteWithChildren
   ProgramsRoute: typeof ProgramsRoute
-  RehabilitationServicesRoute: typeof RehabilitationServicesRoute
+  RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -144,6 +157,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rehabilitation-services/$slug': {
+      id: '/rehabilitation-services/$slug'
+      path: '/$slug'
+      fullPath: '/rehabilitation-services/$slug'
+      preLoaderRoute: typeof RehabilitationServicesSlugRouteImport
+      parentRoute: typeof RehabilitationServicesRoute
+    }
     '/conditions/$slug': {
       id: '/conditions/$slug'
       path: '/$slug'
@@ -166,12 +186,26 @@ const ConditionsRouteWithChildren = ConditionsRoute._addFileChildren(
   ConditionsRouteChildren,
 )
 
+interface RehabilitationServicesRouteChildren {
+  RehabilitationServicesSlugRoute: typeof RehabilitationServicesSlugRoute
+}
+
+const RehabilitationServicesRouteChildren: RehabilitationServicesRouteChildren =
+  {
+    RehabilitationServicesSlugRoute: RehabilitationServicesSlugRoute,
+  }
+
+const RehabilitationServicesRouteWithChildren =
+  RehabilitationServicesRoute._addFileChildren(
+    RehabilitationServicesRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ConditionsRoute: ConditionsRouteWithChildren,
   ProgramsRoute: ProgramsRoute,
-  RehabilitationServicesRoute: RehabilitationServicesRoute,
+  RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
