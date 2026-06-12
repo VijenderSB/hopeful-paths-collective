@@ -16,6 +16,7 @@ import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RehabilitationServicesSlugRouteImport } from './routes/rehabilitation-services.$slug'
+import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$slug'
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 
 const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
@@ -54,6 +55,11 @@ const RehabilitationServicesSlugRoute =
     path: '/$slug',
     getParentRoute: () => RehabilitationServicesRoute,
   } as any)
+const FamilySupportSlugRoute = FamilySupportSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => FamilySupportRoute,
+} as any)
 const ConditionsSlugRoute = ConditionsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -64,20 +70,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
-  '/family-support': typeof FamilySupportRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
-  '/family-support': typeof FamilySupportRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRoutesById {
@@ -85,10 +93,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/conditions': typeof ConditionsRouteWithChildren
-  '/family-support': typeof FamilySupportRoute
+  '/family-support': typeof FamilySupportRouteWithChildren
   '/programs': typeof ProgramsRoute
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/conditions/$slug': typeof ConditionsSlugRoute
+  '/family-support/$slug': typeof FamilySupportSlugRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
 }
 export interface FileRouteTypes {
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/family-support/$slug'
     | '/rehabilitation-services/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/family-support/$slug'
     | '/rehabilitation-services/$slug'
   id:
     | '__root__'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/rehabilitation-services'
     | '/conditions/$slug'
+    | '/family-support/$slug'
     | '/rehabilitation-services/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -128,7 +140,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ConditionsRoute: typeof ConditionsRouteWithChildren
-  FamilySupportRoute: typeof FamilySupportRoute
+  FamilySupportRoute: typeof FamilySupportRouteWithChildren
   ProgramsRoute: typeof ProgramsRoute
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
 }
@@ -184,6 +196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RehabilitationServicesSlugRouteImport
       parentRoute: typeof RehabilitationServicesRoute
     }
+    '/family-support/$slug': {
+      id: '/family-support/$slug'
+      path: '/$slug'
+      fullPath: '/family-support/$slug'
+      preLoaderRoute: typeof FamilySupportSlugRouteImport
+      parentRoute: typeof FamilySupportRoute
+    }
     '/conditions/$slug': {
       id: '/conditions/$slug'
       path: '/$slug'
@@ -206,6 +225,18 @@ const ConditionsRouteWithChildren = ConditionsRoute._addFileChildren(
   ConditionsRouteChildren,
 )
 
+interface FamilySupportRouteChildren {
+  FamilySupportSlugRoute: typeof FamilySupportSlugRoute
+}
+
+const FamilySupportRouteChildren: FamilySupportRouteChildren = {
+  FamilySupportSlugRoute: FamilySupportSlugRoute,
+}
+
+const FamilySupportRouteWithChildren = FamilySupportRoute._addFileChildren(
+  FamilySupportRouteChildren,
+)
+
 interface RehabilitationServicesRouteChildren {
   RehabilitationServicesSlugRoute: typeof RehabilitationServicesSlugRoute
 }
@@ -224,7 +255,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ConditionsRoute: ConditionsRouteWithChildren,
-  FamilySupportRoute: FamilySupportRoute,
+  FamilySupportRoute: FamilySupportRouteWithChildren,
   ProgramsRoute: ProgramsRoute,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
 }
