@@ -28,7 +28,7 @@ export const Route = createFileRoute("/conditions/$slug")({
   notFoundComponent: () => (
     <div className="container-page py-20 text-center">
       <h1 className="text-2xl font-bold">Condition not found</h1>
-      <Link to="/conditions" className="text-teal mt-4 inline-block">← All conditions</Link>
+      <Link to="/conditions" className="text-secondary-foreground mt-4 inline-block">← All conditions</Link>
     </div>
   ),
 });
@@ -79,7 +79,7 @@ function ConditionPage() {
           <div>
             <h2 className="text-2xl font-bold text-primary">Treatment Options</h2>
             <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-              {treatment.map((s) => <li key={s} className="flex gap-2 text-sm"><Stethoscope className="h-5 w-5 text-teal shrink-0" /> {s}</li>)}
+              {treatment.map((s) => <li key={s} className="flex gap-2 text-sm"><Stethoscope className="h-5 w-5 text-secondary-foreground shrink-0" /> {s}</li>)}
             </ul>
           </div>
 
@@ -91,7 +91,7 @@ function ConditionPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-primary flex items-center gap-2"><Users className="h-6 w-6 text-teal" /> The Family's Role</h2>
+            <h2 className="text-2xl font-bold text-primary flex items-center gap-2"><Users className="h-6 w-6 text-secondary-foreground" /> The Family's Role</h2>
             <p className="mt-3 text-muted-foreground leading-relaxed">Family involvement is one of the strongest predictors of long-term recovery. We provide family counselling, education sessions and continued aftercare support.</p>
           </div>
         </article>

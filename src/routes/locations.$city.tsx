@@ -29,7 +29,7 @@ export const Route = createFileRoute("/locations/$city")({
   notFoundComponent: () => (
     <div className="container-page py-20 text-center">
       <h1 className="text-2xl font-bold">City not found</h1>
-      <Link to="/locations" className="text-teal mt-4 inline-block">← All locations</Link>
+      <Link to="/locations" className="text-secondary-foreground mt-4 inline-block">← All locations</Link>
     </div>
   ),
 });
@@ -78,20 +78,20 @@ function CityPage() {
           <div>
             <SectionHeading title={`Why Choose DeAddictify in ${name}`} />
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {WHY_CHOOSE.map(w => <div key={w} className="flex gap-2 text-sm"><CheckCircle2 className="h-5 w-5 text-teal" /> {w}</div>)}
+              {WHY_CHOOSE.map(w => <div key={w} className="flex gap-2 text-sm"><CheckCircle2 className="h-5 w-5 text-secondary-foreground" /> {w}</div>)}
             </div>
           </div>
 
           <div>
             <h2 className="text-2xl font-bold text-primary">What families in {name} say</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <figure className="rounded-2xl bg-soft p-5"><Quote className="h-5 w-5 text-teal" /><blockquote className="mt-2 text-sm">"Compassionate team. Our father is sober for over a year now."</blockquote><figcaption className="mt-3 text-xs font-semibold text-muted-foreground">— Family · {name}</figcaption></figure>
-              <figure className="rounded-2xl bg-soft p-5"><Quote className="h-5 w-5 text-teal" /><blockquote className="mt-2 text-sm">"Affordable and effective. The counsellors guided us throughout."</blockquote><figcaption className="mt-3 text-xs font-semibold text-muted-foreground">— Patient · {name}</figcaption></figure>
+              <figure className="rounded-2xl bg-soft p-5"><Quote className="h-5 w-5 text-secondary-foreground" /><blockquote className="mt-2 text-sm">"Compassionate team. Our father is sober for over a year now."</blockquote><figcaption className="mt-3 text-xs font-semibold text-muted-foreground">— Family · {name}</figcaption></figure>
+              <figure className="rounded-2xl bg-soft p-5"><Quote className="h-5 w-5 text-secondary-foreground" /><blockquote className="mt-2 text-sm">"Affordable and effective. The counsellors guided us throughout."</blockquote><figcaption className="mt-3 text-xs font-semibold text-muted-foreground">— Patient · {name}</figcaption></figure>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-secondary/40 p-6 flex items-center gap-4">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-card border border-border"><MapPin className="h-6 w-6 text-teal" /></div>
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-card border border-border"><MapPin className="h-6 w-6 text-secondary-foreground" /></div>
             <div>
               <h3 className="font-semibold text-primary">Serving {name} & nearby areas</h3>
               <p className="text-sm text-muted-foreground">Map & location details shared after enquiry.</p>

@@ -34,10 +34,10 @@ function BlogLayout() {
             <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="rounded-2xl border border-border bg-card overflow-hidden card-hover">
               <div className="aspect-[16/9] bg-gradient-to-br from-primary/15 via-teal/15 to-success/15" />
               <div className="p-5">
-                <div className="text-xs font-semibold uppercase tracking-wider text-teal">{p.category}</div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-secondary-foreground">{p.category}</div>
                 <h3 className="mt-1 text-lg font-bold text-primary leading-snug">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
-                <span className="mt-3 inline-block text-sm font-semibold text-teal">Read article →</span>
+                <span className="mt-3 inline-block text-sm font-semibold text-secondary-foreground">Read article →</span>
               </div>
             </Link>
           ))}

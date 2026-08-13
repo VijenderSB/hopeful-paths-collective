@@ -35,7 +35,7 @@ function SuccessPage() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {STORIES.map((s, i) => (
             <figure key={i} className="rounded-2xl border border-border bg-card p-6">
-              <Quote className="h-6 w-6 text-teal" />
+              <Quote className="h-6 w-6 text-secondary-foreground" />
               <blockquote className="mt-3 text-sm leading-relaxed">{s.q}</blockquote>
               <figcaption className="mt-4">
                 <div className="text-sm font-semibold text-primary">{s.a}</div>

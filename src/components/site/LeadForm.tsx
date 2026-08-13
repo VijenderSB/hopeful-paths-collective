@@ -17,9 +17,9 @@ export function LeadForm({ compact, title = "Book Free Confidential Counselling"
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-success/40 bg-soft p-6 text-center">
-        <CheckCircle2 className="mx-auto h-10 w-10 text-success-foreground" />
-        <h3 className="mt-3 text-lg font-semibold">Thank you. Your request is received.</h3>
+      <div className="rounded-2xl border border-accent/40 bg-secondary/70 p-8 text-center glass-card">
+        <CheckCircle2 className="mx-auto h-12 w-12 text-accent" />
+        <h3 className="mt-3 text-lg font-semibold text-primary">Thank you. Your request is received.</h3>
         <p className="mt-1 text-sm text-muted-foreground">A counsellor will reach out shortly. All information is kept strictly confidential.</p>
       </div>
     );
@@ -28,15 +28,15 @@ export function LeadForm({ compact, title = "Book Free Confidential Counselling"
   return (
     <form
       onSubmit={onSubmit}
-      className={`rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-sm ${compact ? "" : ""}`}
+      className="rounded-[2rem] glass-card p-6 sm:p-8 shadow-xl"
     >
-      <div className="flex items-center gap-2 text-xs font-medium text-teal">
+      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
         <ShieldCheck className="h-4 w-4" /> 100% Confidential · Free Counselling
       </div>
-      <h3 className="mt-2 text-xl font-bold text-primary">{title}</h3>
+      <h3 className="mt-2 text-2xl font-bold text-primary font-display">{title}</h3>
       <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <input required name="name" placeholder="Full Name" className="input" />
         <input required name="mobile" type="tel" pattern="[0-9+\- ]{7,15}" placeholder="Mobile Number" className="input" />
         {!compact && <input name="email" type="email" placeholder="Email (optional)" className="input" />}
@@ -67,27 +67,28 @@ export function LeadForm({ compact, title = "Book Free Confidential Counselling"
         )}
       </div>
 
-      <button type="submit" className="mt-4 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:opacity-95">
+      <button type="submit" className="mt-5 w-full rounded-2xl bg-primary px-4 py-3.5 text-sm font-semibold text-primary-foreground hover:opacity-95 transition-transform hover:scale-[1.02]">
         Book Free Confidential Counselling
       </button>
-      <p className="mt-2 text-[11px] text-muted-foreground text-center">By submitting, you agree to be contacted by a DeAddictify recovery counsellor.</p>
+      <p className="mt-3 text-[11px] text-muted-foreground text-center">By submitting, you agree to be contacted by a DeAddictify recovery counsellor.</p>
 
       <style>{`
         .input {
           width: 100%;
-          height: 42px;
-          border-radius: 10px;
+          height: 44px;
+          border-radius: 12px;
           border: 1px solid var(--border);
-          background: var(--background);
-          padding: 0 12px;
+          background: oklch(1 0 0 / 0.7);
+          padding: 0 14px;
           font-size: 14px;
           color: var(--foreground);
           outline: none;
-          transition: border-color .15s, box-shadow .15s;
+          transition: border-color .15s, box-shadow .15s, background .15s;
         }
         textarea.input { height: auto; padding-top: 10px; padding-bottom: 10px; }
-        .input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px color-mix(in oklab, var(--teal) 20%, transparent); }
+        .input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); background: oklch(1 0 0 / 0.92); }
       `}</style>
     </form>
   );
 }
+
