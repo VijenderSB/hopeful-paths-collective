@@ -33,7 +33,7 @@ function ContactPage() {
             <div><div className="text-xs uppercase tracking-wider text-muted-foreground">WhatsApp</div><div className="font-bold text-primary">Chat with a counsellor</div></div>
           </a>
           <a href="mailto:care@deaddictify.com" className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-primary">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-teal text-secondary-foreground-foreground"><Mail className="h-6 w-6" /></div>
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-accent-foreground"><Mail className="h-6 w-6" /></div>
             <div><div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div><div className="font-bold text-primary">care@deaddictify.com</div></div>
           </a>
           <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5">
