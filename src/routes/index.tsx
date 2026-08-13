@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, ShieldCheck, HeartHandshake, Users, Stethoscope, MapPin, Phone, MessageCircle, ArrowRight, Quote, Play } from "lucide-react";
+import { CheckCircle2, ShieldCheck, HeartHandshake, Users, Stethoscope, MapPin, Phone, MessageCircle, ArrowRight, Quote, Play, BookOpen } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/site/Programs";
 import { CTARow, FinalCTA, SectionHeading } from "@/components/site/Bits";
-import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
+import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, BLOG_POSTS, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
 import counsellorImg from "@/assets/counsellor.jpg";
 import heroBannerImg from "@/assets/hero-banner.jpg";
 import videoTestimonialImg from "@/assets/video-testimonial.jpg";
@@ -252,6 +252,33 @@ function HomePage() {
 
       {/* FAQ */}
       <FAQ items={HOME_FAQ} />
+
+      {/* BLOG */}
+      <section className="bg-white">
+        <div className="container-page py-16">
+          <SectionHeading center eyebrow="Latest Insights" title="Helpful Articles on Recovery" subtitle="Practical guidance for individuals and families navigating addiction, treatment and long-term recovery." />
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {BLOG_POSTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group flex flex-col rounded-2xl border border-border bg-white overflow-hidden card-hover">
+                <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 via-accent/20 to-primary/5" />
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-secondary-foreground">
+                    <BookOpen className="h-3.5 w-3.5" /> {p.category}
+                  </div>
+                  <h3 className="mt-2 text-lg font-bold text-primary leading-snug">{p.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.excerpt}</p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-secondary-foreground group-hover:text-primary">Read article →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/blog" className="inline-flex items-center gap-2 rounded-2xl px-6 h-12 text-sm font-semibold bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-transform hover:scale-[1.03]">
+              View All Articles <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* LEAD FORM REPEAT */}
       <section className="relative overflow-hidden">
