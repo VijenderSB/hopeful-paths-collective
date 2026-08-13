@@ -281,7 +281,25 @@ function HomePage() {
         </div>
       </section>
 
-
+      {/* BLOG PREVIEW */}
+      <section className="bg-background py-16">
+        <div className="container-page">
+          <SectionHeading center eyebrow="From the blog" title="Recovery Insights & Family Guidance" subtitle="Practical articles to help you understand addiction, support recovery, and rebuild relationships." />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {BLOG_POSTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group rounded-2xl border border-border bg-card overflow-hidden card-hover flex flex-col">
+                <div className="aspect-[16/9] bg-gradient-to-br from-primary/15 via-accent/15 to-secondary/30" />
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-accent-foreground">{p.category}</div>
+                  <h3 className="mt-1 text-lg font-bold text-primary leading-snug">{p.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.excerpt}</p>
+                  <span className="mt-3 inline-block text-sm font-semibold text-accent-foreground group-hover:underline">Read article →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <FinalCTA />
     </>
