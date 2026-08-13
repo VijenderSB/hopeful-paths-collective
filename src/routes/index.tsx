@@ -6,6 +6,7 @@ import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/si
 import { CTARow, FinalCTA, SectionHeading } from "@/components/site/Bits";
 import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
 import counsellorImg from "@/assets/counsellor.jpg";
+import heroBannerImg from "@/assets/hero-banner.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,37 +50,38 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-background">
-        <div className="glow-orb -top-40 left-1/4 h-[28rem] w-[28rem]" />
-        <div className="glow-orb top-20 right-0 h-96 w-96" style={{ background: "oklch(0.5 0.2 330 / 0.14)" }} />
-        <div className="container-page py-12 md:py-20 grid lg:grid-cols-[1.1fr_minmax(360px,460px)] gap-10 items-start">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-secondary border border-border px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
-              <ShieldCheck className="h-3.5 w-3.5" /> Confidential · Psychiatrist-Led · Family-Focused
-            </div>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-primary">
-              Affordable Alcohol & Drug<br /><span className="hero-gradient-text">De-Addiction Programs</span>
-            </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Helping individuals recover from alcohol and drug dependence through structured rehabilitation, psychiatrist-led care, family counselling and long-term recovery support.
-            </p>
-            <div className="mt-6"><CTARow /></div>
-
-            <ul className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
-              {TRUST_POINTS.map((t) => (
-                <li key={t} className="flex items-center gap-2 text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-secondary-foreground" /> {t}</li>
-              ))}
-            </ul>
-
-            <div className="mt-8 inline-flex flex-wrap items-center gap-x-4 gap-y-1 rounded-2xl glass-card px-4 py-3 text-sm">
-              <span className="font-semibold text-primary">24×7 Emergency Helpline:</span>
-              <a href={telLink} className="inline-flex items-center gap-1 hover:underline"><Phone className="h-4 w-4" /> {PHONE_DISPLAY}</a>
-              <a href={waLink} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:underline"><MessageCircle className="h-4 w-4" /> WhatsApp</a>
-            </div>
+      <section className="relative overflow-hidden">
+        <img
+          src={heroBannerImg}
+          alt="Recovery counsellor supporting a patient through addiction counselling"
+          width={1920}
+          height={1024}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/40" />
+        <div className="container-page relative z-10 flex min-h-[620px] md:min-h-[720px] flex-col items-center justify-center py-20 text-center text-white">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/90">
+            <ShieldCheck className="h-3.5 w-3.5" /> Confidential · Psychiatrist-Led · Family-Focused
           </div>
+          <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white">
+            Affordable Alcohol & Drug<br /><span className="hero-gradient-text">De-Addiction Programs</span>
+          </h1>
+          <p className="mt-5 text-lg text-white/90 max-w-2xl leading-relaxed">
+            Helping individuals recover from alcohol and drug dependence through structured rehabilitation, psychiatrist-led care, family counselling and long-term recovery support.
+          </p>
+          <div className="mt-6"><CTARow light /></div>
 
-          <div className="lg:sticky lg:top-24">
-            <LeadForm />
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/80">
+            {TRUST_POINTS.map((t) => (
+              <li key={t} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-white" /> {t}</li>
+            ))}
+          </ul>
+
+          <div className="mt-8 inline-flex flex-wrap items-center gap-x-4 gap-y-1 rounded-2xl bg-white/10 backdrop-blur border border-white/20 px-4 py-3 text-sm text-white">
+            <span className="font-semibold">24×7 Emergency Helpline:</span>
+            <a href={telLink} className="inline-flex items-center gap-1 hover:underline"><Phone className="h-4 w-4" /> {PHONE_DISPLAY}</a>
+            <a href={waLink} target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:underline"><MessageCircle className="h-4 w-4" /> WhatsApp</a>
           </div>
         </div>
       </section>
