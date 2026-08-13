@@ -4,7 +4,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/site/Programs";
 import { CTARow, FinalCTA, SectionHeading } from "@/components/site/Bits";
-import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
+import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, BLOG_POSTS, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
 import counsellorImg from "@/assets/counsellor.jpg";
 import heroBannerImg from "@/assets/hero-banner.jpg";
 import videoTestimonialImg from "@/assets/video-testimonial.jpg";
