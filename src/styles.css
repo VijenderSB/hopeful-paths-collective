@@ -41,31 +41,31 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.04 250);
+  --background: oklch(0.995 0.004 200);
+  --foreground: oklch(0.2 0.05 235);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.04 250);
+  --card-foreground: oklch(0.2 0.05 235);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.04 250);
-  --primary: oklch(0.34 0.11 250);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.02 220);
-  --secondary-foreground: oklch(0.28 0.08 250);
-  --muted: oklch(0.97 0.012 230);
-  --muted-foreground: oklch(0.5 0.03 250);
-  --accent: oklch(0.62 0.11 200);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.6 0.18 28);
+  --popover-foreground: oklch(0.2 0.05 235);
+  --primary: oklch(0.42 0.16 245);
+  --primary-foreground: oklch(0.99 0.005 220);
+  --secondary: oklch(0.94 0.05 195);
+  --secondary-foreground: oklch(0.32 0.12 240);
+  --muted: oklch(0.965 0.02 205);
+  --muted-foreground: oklch(0.48 0.05 240);
+  --accent: oklch(0.7 0.17 45);
+  --accent-foreground: oklch(0.2 0.06 50);
+  --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.012 230);
-  --input: oklch(0.92 0.012 230);
-  --ring: oklch(0.62 0.11 200);
-  --teal: oklch(0.62 0.11 200);
+  --border: oklch(0.9 0.025 210);
+  --input: oklch(0.9 0.025 210);
+  --ring: oklch(0.66 0.16 190);
+  --teal: oklch(0.64 0.15 190);
   --teal-foreground: oklch(0.99 0 0);
-  --success: oklch(0.7 0.13 155);
-  --success-foreground: oklch(0.16 0.04 160);
-  --soft: oklch(0.96 0.04 165);
-  --whatsapp: oklch(0.66 0.15 150);
+  --success: oklch(0.72 0.17 155);
+  --success-foreground: oklch(0.18 0.06 160);
+  --soft: oklch(0.95 0.06 175);
+  --whatsapp: oklch(0.65 0.17 148);
 }
 
 @layer base {
@@ -96,18 +96,18 @@
 }
 
 @utility hero-gradient {
-  background: linear-gradient(135deg, oklch(0.34 0.11 250) 0%, oklch(0.42 0.12 230) 50%, oklch(0.55 0.12 205) 100%);
+  background: linear-gradient(135deg, oklch(0.34 0.16 265) 0%, oklch(0.44 0.16 235) 45%, oklch(0.62 0.15 190) 100%);
 }
 
 @utility section-soft {
-  background: linear-gradient(180deg, oklch(0.99 0.005 220) 0%, oklch(0.96 0.015 200) 100%);
+  background: linear-gradient(180deg, oklch(0.99 0.01 200) 0%, oklch(0.94 0.05 185) 100%);
 }
 
 @utility card-hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px -16px oklch(0.34 0.11 250 / 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px -16px oklch(0.44 0.16 235 / 0.35);
     border-color: var(--color-teal);
   }
 }
