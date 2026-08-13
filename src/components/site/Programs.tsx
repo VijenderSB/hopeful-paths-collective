@@ -4,7 +4,8 @@ import { PROGRAMS, DISCLAIMER } from "@/lib/site";
 
 export function ProgramCards() {
   return (
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <div className="@container">
+      <div className="grid gap-6 @md:grid-cols-2 @5xl:grid-cols-4">
       {PROGRAMS.map((p) => {
         const featured = Boolean(p.badge);
         return (
@@ -13,20 +14,21 @@ export function ProgramCards() {
             id={`p-${p.days}`}
             className={
               featured
-                ? "relative rounded-[2rem] p-8 hero-gradient text-white shadow-2xl shadow-primary/30 xl:-translate-y-4 transition-all duration-500"
-                : "relative rounded-[2rem] glass-card p-8 shadow-sm card-hover"
+                ? "relative rounded-[2rem] p-6 @md:p-7 hero-gradient text-white shadow-2xl shadow-primary/30 @5xl:-translate-y-4 transition-all duration-500"
+                : "relative rounded-[2rem] glass-card p-6 @md:p-7 shadow-sm card-hover"
             }
           >
             {p.badge && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground shadow-md">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground shadow-md">
                 <Star className="h-3 w-3" /> {p.badge}
               </span>
             )}
             <div className={`text-xs font-semibold uppercase tracking-wider ${featured ? "text-white/70" : "text-secondary-foreground"}`}>{p.days}-Day Program</div>
-            <h3 className={`mt-1 text-2xl font-bold leading-snug ${featured ? "text-white" : "text-primary"}`}>{p.title}</h3>
+            <h3 className={`mt-1 text-xl @md:text-2xl font-bold leading-snug ${featured ? "text-white" : "text-primary"}`}>{p.title}</h3>
             <p className={`mt-2 text-xs ${featured ? "text-white/75" : "text-muted-foreground"}`}>
               <span className={`font-semibold ${featured ? "text-white" : "text-foreground"}`}>Best for:</span> {p.best}
             </p>
+
             <div className="mt-4 flex items-baseline gap-1">
               <span className={`text-3xl font-bold ${featured ? "text-white" : "text-primary"}`}>₹{p.perDay.toLocaleString("en-IN")}</span>
               <span className={`text-sm ${featured ? "text-white/70" : "text-muted-foreground"}`}>/ day</span>
@@ -48,8 +50,10 @@ export function ProgramCards() {
           </div>
         );
       })}
+      </div>
     </div>
   );
+
 }
 
 
