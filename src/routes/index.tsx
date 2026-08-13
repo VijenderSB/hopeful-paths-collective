@@ -5,6 +5,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/site/Programs";
 import { CTARow, FinalCTA, SectionHeading } from "@/components/site/Bits";
 import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
+import counsellorImg from "@/assets/counsellor.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -216,19 +217,22 @@ function HomePage() {
       <FAQ items={HOME_FAQ} />
 
       {/* LEAD FORM REPEAT */}
-      <section className="container-page pb-16">
-        <div className="grid gap-8 lg:grid-cols-2 items-start">
-          <div>
-            <SectionHeading eyebrow="Talk to a counsellor" title="Take The First Step Today" subtitle="Share a few details and a recovery counsellor will reach out — confidentially and without judgment." />
-            <ul className="mt-6 space-y-2 text-sm">
-              <li className="flex gap-2"><Users className="h-5 w-5 text-secondary-foreground" /> Family-focused approach</li>
-              <li className="flex gap-2"><ShieldCheck className="h-5 w-5 text-secondary-foreground" /> 100% confidential</li>
-              <li className="flex gap-2"><Stethoscope className="h-5 w-5 text-secondary-foreground" /> Psychiatrist-led care</li>
-            </ul>
-          </div>
-          <LeadForm />
+      <section className="relative overflow-hidden">
+        <img src={counsellorImg} alt="Recovery counsellor ready to talk" loading="lazy" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-primary/75" />
+        <div className="container-page relative py-20 text-center text-white">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Talk to a counsellor</div>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold">Take The First Step Today</h2>
+          <p className="mt-3 mx-auto max-w-2xl text-white/80 leading-relaxed">Share a few details and a recovery counsellor will reach out — confidentially and without judgment.</p>
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/90">
+            <li className="flex items-center gap-2"><Users className="h-5 w-5" /> Family-focused approach</li>
+            <li className="flex items-center gap-2"><ShieldCheck className="h-5 w-5" /> 100% confidential</li>
+            <li className="flex items-center gap-2"><Stethoscope className="h-5 w-5" /> Psychiatrist-led care</li>
+          </ul>
+          <div className="mt-10 mx-auto max-w-xl text-left"><LeadForm /></div>
         </div>
       </section>
+
 
 
       <FinalCTA />
