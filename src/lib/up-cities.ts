@@ -16,8 +16,6 @@ const T2: UPCity[] = [
   { slug: "prayagraj", name: "Allahabad (Prayagraj)", tier: 2, region: "Purvanchal", travel: "an overnight train or a short flight to Delhi", note: "a coaching and legal-services hub where long study cycles and stress fuel dependence" },
   { slug: "bareilly", name: "Bareilly", tier: 2, region: "Rohilkhand", travel: "5–6 hours by road or a direct overnight train", note: "strong family networks that often step in before the patient is ready to accept help" },
   { slug: "firozabad", name: "Firozabad", tier: 2, region: "Braj region", travel: "3–4 hours by road via Agra and the Yamuna Expressway", note: "shift-based glass-industry work, where alcohol use is often normalised among co-workers" },
-  { slug: "gautam-buddha-nagar", name: "Gautam Buddha Nagar (Noida / Greater Noida)", tier: 2, region: "Delhi NCR", travel: "within Delhi NCR — same-day admission is usually possible", note: "corporate and hostel populations with high-functioning, hidden addiction" },
-  { slug: "ghaziabad-up", name: "Ghaziabad", tier: 2, region: "Delhi NCR", travel: "inside NCR — under an hour to most partner centres", note: "dense residential colonies where families seek discreet, non-local treatment" },
   { slug: "gorakhpur", name: "Gorakhpur", tier: 2, region: "Purvanchal", travel: "an overnight train to Delhi or a direct flight", note: "migration-driven separation from family, a known relapse risk" },
   { slug: "jhansi", name: "Jhansi", tier: 2, region: "Bundelkhand", travel: "a 5–6 hour train journey to Delhi via the central line", note: "limited local psychiatric capacity, so structured rehab usually means travelling" },
   { slug: "kanpur-nagar", name: "Kanpur Nagar", tier: 2, region: "Central UP", travel: "4–5 hours by Vande Bharat/Shatabdi or an overnight train", note: "industrial employment patterns where daily drinking is treated as routine" },
@@ -111,6 +109,11 @@ const T3: UPCity[] = T3_RAW.map(([name, region, travel, note]) => ({
 export const UP_CITIES: UPCity[] = [...T2, ...T3];
 export const UP_TIER2 = T2;
 export const UP_TIER3 = T3;
+
+export const NCR_ALIASES: Array<{ name: string; to: string; slug: string }> = [
+  { name: "Gautam Buddha Nagar (Noida / Greater Noida)", to: "/locations/$city", slug: "noida" },
+  { name: "Ghaziabad", to: "/locations/$city", slug: "ghaziabad" },
+];
 
 export const findUPCity = (slug: string) => UP_CITIES.find((c) => c.slug === slug);
 
