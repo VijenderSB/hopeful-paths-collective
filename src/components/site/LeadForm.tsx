@@ -86,7 +86,7 @@ export function LeadForm({ compact, title = "Book Free Confidential Counselling"
           transition: border-color .15s, box-shadow .15s, background .15s;
         }
         textarea.input { height: auto; padding-top: 10px; padding-bottom: 10px; }
-        .input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px color-mix(in oklab, var(--teal) 20%, transparent); background: oklch(1 0 0 / 0.92); }
+        .input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); background: oklch(1 0 0 / 0.92); }
       `}</style>
     </form>
   );
