@@ -29,13 +29,13 @@ function LocationsLayout() {
           {CITIES.map((c) => (
             <Link key={c.slug} to="/locations/$city" params={{ city: c.slug }} className="group rounded-2xl border border-border bg-card p-6 card-hover flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-soft text-success-foreground"><MapPin className="h-6 w-6" /></div>
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-secondary-foreground"><MapPin className="h-6 w-6" /></div>
                 <div>
                   <div className="text-lg font-semibold text-primary">{c.name}</div>
                   <div className="text-xs text-muted-foreground">De-addiction & rehab</div>
                 </div>
               </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-teal" />
+              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-secondary-foreground" />
             </Link>
           ))}
         </div>

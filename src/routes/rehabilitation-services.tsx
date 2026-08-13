@@ -30,7 +30,7 @@ function ServicesLayout() {
             <Link key={s.slug} to="/rehabilitation-services/$slug" params={{ slug: s.slug }} className="group rounded-2xl border border-border bg-card p-5 card-hover">
               <h3 className="text-lg font-semibold text-primary">{s.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">Structured care delivered by qualified professionals.</p>
-              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-teal">Learn more <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" /></span>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-secondary-foreground">Learn more <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" /></span>
             </Link>
           ))}
         </div>

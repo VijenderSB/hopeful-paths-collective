@@ -30,7 +30,7 @@ function FamilyLayout() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {FAMILY_PAGES.map((p) => (
               <Link key={p.slug} to="/family-support/$slug" params={{ slug: p.slug }} className="rounded-2xl border border-border bg-card p-5 card-hover">
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-soft text-success-foreground"><HeartHandshake className="h-5 w-5" /></div>
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-secondary text-secondary-foreground"><HeartHandshake className="h-5 w-5" /></div>
                 <h3 className="mt-3 text-lg font-semibold text-primary">{p.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Read guidance →</p>
               </Link>

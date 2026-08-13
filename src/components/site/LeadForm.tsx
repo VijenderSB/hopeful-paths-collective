@@ -17,8 +17,8 @@ export function LeadForm({ compact, title = "Book Free Confidential Counselling"
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-teal/40 bg-soft/70 p-8 text-center glass-card">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-teal-foreground" />
+      <div className="rounded-2xl border border-secondary-foreground/40 bg-secondary/70 p-8 text-center glass-card">
+        <CheckCircle2 className="mx-auto h-12 w-12 text-secondary-foreground-foreground" />
         <h3 className="mt-3 text-lg font-semibold text-primary">Thank you. Your request is received.</h3>
         <p className="mt-1 text-sm text-muted-foreground">A counsellor will reach out shortly. All information is kept strictly confidential.</p>
       </div>

@@ -28,7 +28,7 @@ export const Route = createFileRoute("/rehabilitation-services/$slug")({
   notFoundComponent: () => (
     <div className="container-page py-20 text-center">
       <h1 className="text-2xl font-bold">Service not found</h1>
-      <Link to="/rehabilitation-services" className="text-teal mt-4 inline-block">← All services</Link>
+      <Link to="/rehabilitation-services" className="text-secondary-foreground mt-4 inline-block">← All services</Link>
     </div>
   ),
 });
@@ -66,7 +66,7 @@ function ServicePage() {
           </div>
           <div>
             <h2 className="text-2xl font-bold text-primary">Expected outcomes</h2>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">{outcomes.map(b => <li key={b} className="flex gap-2 text-sm"><CheckCircle2 className="h-5 w-5 text-teal" /> {b}</li>)}</ul>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">{outcomes.map(b => <li key={b} className="flex gap-2 text-sm"><CheckCircle2 className="h-5 w-5 text-secondary-foreground" /> {b}</li>)}</ul>
           </div>
         </article>
         <aside className="lg:sticky lg:top-24"><LeadForm title={`Enquire about ${name}`} /></aside>

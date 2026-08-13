@@ -66,7 +66,7 @@ function HomePage() {
 
             <ul className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
               {TRUST_POINTS.map((t) => (
-                <li key={t} className="flex items-center gap-2 text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-teal" /> {t}</li>
+                <li key={t} className="flex items-center gap-2 text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-secondary-foreground" /> {t}</li>
               ))}
             </ul>
 

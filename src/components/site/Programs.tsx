@@ -35,7 +35,7 @@ export function ProgramCards() {
             <ul className="mt-4 space-y-1.5 text-sm">
               {p.includes.map((it) => (
                 <li key={it} className={`flex gap-2 ${featured ? "text-white/85" : ""}`}>
-                  <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${featured ? "text-white" : "text-teal"}`} /> <span>{it}</span>
+                  <CheckCircle2 className={`h-4 w-4 mt-0.5 shrink-0 ${featured ? "text-white" : "text-secondary-foreground"}`} /> <span>{it}</span>
                 </li>
               ))}
             </ul>

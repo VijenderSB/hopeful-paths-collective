@@ -27,7 +27,7 @@ export const Route = createFileRoute("/family-support/$slug")({
   notFoundComponent: () => (
     <div className="container-page py-20 text-center">
       <h1 className="text-2xl font-bold">Page not found</h1>
-      <Link to="/family-support" className="text-teal mt-4 inline-block">← Family support</Link>
+      <Link to="/family-support" className="text-secondary-foreground mt-4 inline-block">← Family support</Link>
     </div>
   ),
 });
