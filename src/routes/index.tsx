@@ -209,8 +209,41 @@ function HomePage() {
             ))}
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="rounded-[2rem] border border-border bg-card/80 backdrop-blur aspect-video grid place-items-center text-muted-foreground text-sm">Video Testimonial Placeholder</div>
-            <div className="rounded-[2rem] border border-border bg-card/80 backdrop-blur aspect-video grid place-items-center text-muted-foreground text-sm">Before & After Recovery Story</div>
+            <div className="group relative overflow-hidden rounded-[2rem] border border-border aspect-video cursor-pointer">
+              <img
+                src={videoTestimonialImg}
+                alt="Video testimonial of a family sharing their recovery journey"
+                loading="lazy"
+                width={1920}
+                height={1080}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute inset-0 grid place-items-center">
+                <div className="grid h-16 w-16 place-items-center rounded-full bg-white/90 text-primary shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <Play className="h-7 w-7 fill-current ml-1" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                <div className="text-xs font-semibold uppercase tracking-wide text-white/80">Watch Video</div>
+                <div className="mt-1 text-base font-semibold">A Family’s Journey to Recovery</div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-[2rem] border border-border aspect-video">
+              <img
+                src={beforeAfterImg}
+                alt="Before and after recovery transformation story"
+                loading="lazy"
+                width={1920}
+                height={1080}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                <div className="text-xs font-semibold uppercase tracking-wide text-white/80">Recovery Story</div>
+                <div className="mt-1 text-base font-semibold">Reclaiming Life After Addiction</div>
+              </div>
+            </div>
           </div>
           <p className="mt-4 text-center"><Link to="/success-stories" className="text-primary text-sm font-semibold hover:underline">Read more success stories →</Link></p>
 
