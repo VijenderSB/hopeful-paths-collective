@@ -50,8 +50,10 @@ export function ProgramCards() {
           </div>
         );
       })}
+      </div>
     </div>
   );
+
 }
 
 
