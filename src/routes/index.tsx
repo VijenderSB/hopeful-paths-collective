@@ -6,6 +6,7 @@ import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/si
 import { CTARow, FinalCTA, SectionHeading } from "@/components/site/Bits";
 import { CITIES, CONDITIONS, HOME_FAQ, TRUST_POINTS, WHY_CHOOSE, telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
 import counsellorImg from "@/assets/counsellor.jpg";
+import heroBannerImg from "@/assets/hero-banner.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
