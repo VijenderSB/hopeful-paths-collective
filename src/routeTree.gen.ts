@@ -29,6 +29,7 @@ import { Route as FamilySupportSlugRouteImport } from './routes/family-support.$
 import { Route as ConditionsSlugRouteImport } from './routes/conditions.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LocationsUttarPradeshIndexRouteImport } from './routes/locations.uttar-pradesh.index'
+import { Route as LocationsUttarPradeshCityRouteImport } from './routes/locations.uttar-pradesh.$city'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -132,6 +133,12 @@ const LocationsUttarPradeshIndexRoute =
     path: '/uttar-pradesh/',
     getParentRoute: () => LocationsRoute,
   } as any)
+const LocationsUttarPradeshCityRoute =
+  LocationsUttarPradeshCityRouteImport.update({
+    id: '/uttar-pradesh/$city',
+    path: '/uttar-pradesh/$city',
+    getParentRoute: () => LocationsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
+  '/locations/uttar-pradesh/$city': typeof LocationsUttarPradeshCityRoute
   '/locations/uttar-pradesh/': typeof LocationsUttarPradeshIndexRoute
 }
 export interface FileRoutesByTo {
@@ -175,6 +183,7 @@ export interface FileRoutesByTo {
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
+  '/locations/uttar-pradesh/$city': typeof LocationsUttarPradeshCityRoute
   '/locations/uttar-pradesh': typeof LocationsUttarPradeshIndexRoute
 }
 export interface FileRoutesById {
@@ -198,6 +207,7 @@ export interface FileRoutesById {
   '/family-support/$slug': typeof FamilySupportSlugRoute
   '/locations/$city': typeof LocationsCityRoute
   '/rehabilitation-services/$slug': typeof RehabilitationServicesSlugRoute
+  '/locations/uttar-pradesh/$city': typeof LocationsUttarPradeshCityRoute
   '/locations/uttar-pradesh/': typeof LocationsUttarPradeshIndexRoute
 }
 export interface FileRouteTypes {
@@ -222,6 +232,7 @@ export interface FileRouteTypes {
     | '/family-support/$slug'
     | '/locations/$city'
     | '/rehabilitation-services/$slug'
+    | '/locations/uttar-pradesh/$city'
     | '/locations/uttar-pradesh/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -244,6 +255,7 @@ export interface FileRouteTypes {
     | '/family-support/$slug'
     | '/locations/$city'
     | '/rehabilitation-services/$slug'
+    | '/locations/uttar-pradesh/$city'
     | '/locations/uttar-pradesh'
   id:
     | '__root__'
@@ -266,6 +278,7 @@ export interface FileRouteTypes {
     | '/family-support/$slug'
     | '/locations/$city'
     | '/rehabilitation-services/$slug'
+    | '/locations/uttar-pradesh/$city'
     | '/locations/uttar-pradesh/'
   fileRoutesById: FileRoutesById
 }
@@ -428,6 +441,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocationsUttarPradeshIndexRouteImport
       parentRoute: typeof LocationsRoute
     }
+    '/locations/uttar-pradesh/$city': {
+      id: '/locations/uttar-pradesh/$city'
+      path: '/uttar-pradesh/$city'
+      fullPath: '/locations/uttar-pradesh/$city'
+      preLoaderRoute: typeof LocationsUttarPradeshCityRouteImport
+      parentRoute: typeof LocationsRoute
+    }
   }
 }
 
@@ -467,11 +487,13 @@ const FamilySupportRouteWithChildren = FamilySupportRoute._addFileChildren(
 
 interface LocationsRouteChildren {
   LocationsCityRoute: typeof LocationsCityRoute
+  LocationsUttarPradeshCityRoute: typeof LocationsUttarPradeshCityRoute
   LocationsUttarPradeshIndexRoute: typeof LocationsUttarPradeshIndexRoute
 }
 
 const LocationsRouteChildren: LocationsRouteChildren = {
   LocationsCityRoute: LocationsCityRoute,
+  LocationsUttarPradeshCityRoute: LocationsUttarPradeshCityRoute,
   LocationsUttarPradeshIndexRoute: LocationsUttarPradeshIndexRoute,
 }
 

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { CITIES, CONDITIONS, SERVICES, FAMILY_PAGES, BLOG_POSTS } from "@/lib/site";
+import { UP_CITIES } from "@/lib/up-cities";
 
 const BASE_URL = "";
 
@@ -17,6 +18,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         SERVICES.forEach(s => paths.push(`/rehabilitation-services/${s.slug}`));
         FAMILY_PAGES.forEach(f => paths.push(`/family-support/${f.slug}`));
         CITIES.forEach(c => paths.push(`/locations/${c.slug}`));
+        paths.push("/locations/uttar-pradesh");
+        UP_CITIES.forEach(c => paths.push(`/locations/uttar-pradesh/${c.slug}`));
         BLOG_POSTS.forEach(b => paths.push(`/blog/${b.slug}`));
 
         const urls = paths.map(p => `  <url><loc>${BASE_URL}${p}</loc><changefreq>weekly</changefreq></url>`).join("\n");

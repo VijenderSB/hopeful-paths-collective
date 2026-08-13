@@ -19,7 +19,7 @@ export const Route = createFileRoute("/locations")({
 
 function LocationsLayout() {
   const matches = useMatches();
-  if (matches.some((m) => m.routeId === "/locations/$city")) return <Outlet />;
+  if (matches.some((m) => m.routeId !== "/locations" && m.routeId.startsWith("/locations"))) return <Outlet />;
   return (
     <>
       <PageHero eyebrow="Delhi NCR Coverage" title="De-Addiction Across Delhi NCR" subtitle="Affordable de-addiction and rehabilitation programs in every major Delhi NCR city." />
@@ -38,6 +38,14 @@ function LocationsLayout() {
               <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-secondary-foreground" />
             </Link>
           ))}
+        </div>
+      </section>
+      <section className="section-soft">
+        <div className="container-page py-14">
+          <SectionHeading title="Coming From Uttar Pradesh?" subtitle="Patients from 73 Uttar Pradesh districts are assessed locally by phone and admitted to affiliated psychiatrist-led de-addiction centres in Delhi NCR, with aftercare continuing back home." />
+          <Link to="/locations/uttar-pradesh" className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-primary px-6 h-12 text-sm font-semibold text-primary-foreground">
+            Uttar Pradesh city guides <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
       <FinalCTA />
