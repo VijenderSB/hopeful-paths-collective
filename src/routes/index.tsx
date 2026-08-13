@@ -227,15 +227,17 @@ function HomePage() {
           className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/75 to-primary/90" />
-        <div className="container-page relative flex min-h-[85vh] flex-col items-center justify-center py-16 text-center text-white">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Talk to a counsellor</div>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold">Take The First Step Today</h2>
-          <p className="mt-3 mx-auto max-w-2xl text-white/80 leading-relaxed">Share a few details and a recovery counsellor will reach out — confidentially and without judgment.</p>
-          <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/90">
-            <li className="flex items-center gap-2"><Users className="h-5 w-5" /> Family-focused approach</li>
-            <li className="flex items-center gap-2"><ShieldCheck className="h-5 w-5" /> 100% confidential</li>
-            <li className="flex items-center gap-2"><Stethoscope className="h-5 w-5" /> Psychiatrist-led care</li>
-          </ul>
+        <div className="container-page relative flex min-h-[85vh] flex-col items-center justify-between py-16 text-center text-white">
+          <div className="flex flex-1 flex-col items-center justify-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Talk to a counsellor</div>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">Take The First Step Today</h2>
+            <p className="mt-3 mx-auto max-w-2xl text-white/80 leading-relaxed">Share a few details and a recovery counsellor will reach out — confidentially and without judgment.</p>
+            <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/90">
+              <li className="flex items-center gap-2"><Users className="h-5 w-5" /> Family-focused approach</li>
+              <li className="flex items-center gap-2"><ShieldCheck className="h-5 w-5" /> 100% confidential</li>
+              <li className="flex items-center gap-2"><Stethoscope className="h-5 w-5" /> Psychiatrist-led care</li>
+            </ul>
+          </div>
           <div className="mt-10 w-full max-w-lg text-left">
             <LeadForm compact title="Book Free Confidential Counselling" subtitle="A counsellor will call you back within 30 minutes." />
           </div>
