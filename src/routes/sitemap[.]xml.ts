@@ -13,6 +13,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/", "/about", "/conditions", "/programs", "/rehabilitation-services",
           "/family-support", "/locations", "/cities", "/success-stories", "/blog", "/contact",
           "/privacy", "/terms", "/disclaimer",
+        ];
+
 
         CONDITIONS.forEach(c => paths.push(`/conditions/${c.slug}`));
         SERVICES.forEach(s => paths.push(`/rehabilitation-services/${s.slug}`));
