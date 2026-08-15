@@ -11,9 +11,11 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const paths: string[] = [
           "/", "/about", "/conditions", "/programs", "/rehabilitation-services",
-          "/family-support", "/locations", "/success-stories", "/blog", "/contact",
+          "/family-support", "/locations", "/cities", "/success-stories", "/blog", "/contact",
           "/privacy", "/terms", "/disclaimer",
         ];
+
+
         CONDITIONS.forEach(c => paths.push(`/conditions/${c.slug}`));
         SERVICES.forEach(s => paths.push(`/rehabilitation-services/${s.slug}`));
         FAMILY_PAGES.forEach(f => paths.push(`/family-support/${f.slug}`));

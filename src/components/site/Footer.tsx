@@ -62,7 +62,13 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <h4 className="font-semibold mb-3 mt-6">Cities</h4>
+          <ul className="space-y-2 text-sm text-primary-foreground/85">
+            <li><Link to="/cities" className="hover:underline">All Cities We Serve</Link></li>
+            <li><Link to="/locations/uttar-pradesh" className="hover:underline">Uttar Pradesh Cities</Link></li>
+          </ul>
         </div>
+
       </div>
 
       <div className="border-t border-white/15">
