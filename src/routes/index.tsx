@@ -95,20 +95,49 @@ function HomePage() {
       {/* RECLAIM 360 USP */}
       <section className="relative overflow-hidden hero-gradient text-white">
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
-        <div className="container-page relative z-10 py-12 md:py-14">
+        <div className="container-page relative z-10 py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/12 border border-white/25 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/90">
               Our Approach
             </div>
-            <h2 className="mt-4 text-2xl md:text-4xl font-bold leading-tight">
+            <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight">
               Introducing RECLAIM 360™
             </h2>
             <p className="mt-3 text-base md:text-lg text-white/90">
               Beyond De-Addiction. Rebuilding the Person, Family &amp; Life.
             </p>
+            <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed">
+              Stopping the substance is only the first milestone. RECLAIM 360™ treats recovery across eight
+              connected dimensions — so the body heals, the mind steadies, the family recovers and daily life
+              becomes strong enough to hold sobriety.
+            </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold text-white">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: HeartPulse, t: "Medical Recovery", d: "Supervised detox, withdrawal management and psychiatric follow-up." },
+              { icon: Brain, t: "Mind & Thought", d: "CBT-based work on cravings, triggers and distorted thinking." },
+              { icon: RefreshCw, t: "Behaviour Change", d: "New routines, discipline and relapse-prevention habits." },
+              { icon: Smile, t: "Emotional Healing", d: "Guilt, shame, anger and trauma addressed with a therapist." },
+              { icon: Dumbbell, t: "Physical Restoration", d: "Sleep, nutrition, fitness and energy rebuilt step by step." },
+              { icon: Users, t: "Family Recovery", d: "Family therapy, boundaries and communication repair." },
+              { icon: Briefcase, t: "Life Reintegration", d: "Return to work, study, finances and social confidence." },
+              { icon: ShieldCheck, t: "Recovery Continuity", d: "Aftercare, monitoring and long-term relapse safeguards." },
+            ].map(({ icon: Icon, t, d }) => (
+              <div key={t} className="rounded-[1.75rem] bg-white/10 backdrop-blur border border-white/15 p-5 text-left">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-white/15">
+                  <Icon className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="mt-3 text-base font-bold text-white">{t}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-white/75">{d}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-center text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+            The RECLAIM 360™ Journey
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold text-white">
             {["STABILISE", "UNDERSTAND", "HEAL", "REBUILD", "RECONNECT", "REINTEGRATE", "SUSTAIN"].map((step, idx, arr) => (
               <span key={step} className="flex items-center gap-2">
                 <span className="rounded-full bg-white/15 px-3 py-1">{step}</span>
