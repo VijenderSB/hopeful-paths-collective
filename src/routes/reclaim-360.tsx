@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, HeartPulse, Brain, RefreshCw, Smile, Dumbbell, Users, Briefcase, ShieldCheck, Phone } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
-import { telLink, PHONE_DISPLAY } from "@/lib/site";
+import { telLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
+import { Testimonials } from "@/components/site/Testimonials";
+import { FAQ } from "@/components/site/FAQ";
 
 const TITLE = "RECLAIM 360™ — Complete Addiction Recovery Model | DeAddictify";
 const DESC =
@@ -112,6 +114,9 @@ function Reclaim360Page() {
           <p className="text-center text-muted-foreground">Not Just Freedom From Addiction. A Structured Journey Back to Life.</p>
         </div>
       </section>
+
+      <Testimonials title="Families Who Walked The RECLAIM 360™ Journey" />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} title="RECLAIM 360™ — Frequently Asked Questions" />
 
       <section className="container-page py-14">
         <div className="max-w-2xl mx-auto">

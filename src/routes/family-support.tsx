@@ -1,6 +1,8 @@
 import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
-import { FAMILY_PAGES } from "@/lib/site";
+import { FAMILY_PAGES, GLOBAL_FAQ } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
 import { HeartHandshake } from "lucide-react";
 
@@ -39,6 +41,8 @@ function FamilyLayout() {
         </div>
         <aside className="lg:sticky lg:top-24"><LeadForm title="Speak To A Family Counsellor" /></aside>
       </section>
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

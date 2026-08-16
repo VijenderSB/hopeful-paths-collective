@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
@@ -61,6 +62,7 @@ function AboutPage() {
       <section className="container-page pb-16">
         <div className="max-w-2xl mx-auto"><LeadForm /></div>
       </section>
+      <Testimonials />
       <FinalCTA />
     </>
   );
