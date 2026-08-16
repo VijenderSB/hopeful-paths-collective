@@ -158,6 +158,7 @@ function HomePage() {
       </section>
 
       {/* PROBLEM */}
+      <section className="container-page py-16">
         <SectionHeading center eyebrow="If this feels familiar" title="Is Alcohol Or Drug Addiction Affecting Your Family?" subtitle="You are not alone. Recovery is possible with the right structured help." />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PROBLEMS.map((p) => (
