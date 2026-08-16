@@ -289,34 +289,27 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading center eyebrow="From the blog" title="Recovery Insights & Family Guidance" subtitle="Practical articles to help you understand addiction, support recovery, and rebuild relationships." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {BLOG_POSTS.slice(0, 3).map((p, i) => {
-              const images = [blogFamilyImg, blogAlcoholImg, blogDrugImg];
-              const alts = [
-                "Family having a supportive conversation about addiction recovery",
-                "Doctor discussing alcohol addiction treatment options with a patient",
-                "Young man reading peacefully in a bright rehabilitation centre",
-              ];
-              return (
-                <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group rounded-2xl border border-border bg-card overflow-hidden card-hover flex flex-col">
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img
-                      src={images[i].url}
-                      alt={alts[i]}
-                      loading="lazy"
-                      width={1024}
-                      height={576}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-accent-foreground">{p.category}</div>
-                    <h3 className="mt-1 text-lg font-bold text-primary leading-snug">{p.title}</h3>
-                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.excerpt}</p>
-                    <span className="mt-3 inline-block text-sm font-semibold text-accent-foreground group-hover:underline">Read article →</span>
-                  </div>
-                </Link>
-              );
-            })}
+            {BLOG_POSTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group rounded-2xl border border-border bg-card overflow-hidden card-hover flex flex-col">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.imageAlt}
+                    loading="lazy"
+                    width={1024}
+                    height={576}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-accent-foreground">{p.category}</div>
+                  <h3 className="mt-1 text-lg font-bold text-primary leading-snug">{p.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.excerpt}</p>
+                  <span className="mt-3 inline-block text-sm font-semibold text-accent-foreground group-hover:underline">Read article →</span>
+                </div>
+              </Link>
+            ))}
+
           </div>
         </div>
       </section>
