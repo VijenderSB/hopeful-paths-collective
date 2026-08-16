@@ -6,6 +6,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { GLOBAL_FAQ, WHY_CHOOSE } from "@/lib/site";
 import { CheckCircle2 } from "lucide-react";
 import pageBanner from "@/assets/banner-about.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "DeAddictify is an affordable, psychiatrist-led de-addiction and recovery platform for Delhi NCR. Learn our mission, vision and how we help families." },
       { property: "og:title", content: "About DeAddictify" },
       { property: "og:description", content: "Affordable psychiatrist-led de-addiction & recovery support across Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/about" },
+      { property: "og:url", content: `${SITE_URL}/about` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/about" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: AboutPage,
 });

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/site/Bits";
 import { LegalBody, LegalSection } from "@/components/site/Legal";
 import { DISCLAIMER, PHONE_DISPLAY } from "@/lib/site";
 import pageBanner from "@/assets/banner-legal.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/disclaimer")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:description", content: "Important medical and legal disclaimers for patients and families using DeAddictify." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/disclaimer" },
+      { property: "og:url", content: `${SITE_URL}/disclaimer` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/disclaimer" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/disclaimer` }],
   }),
   component: DisclaimerPage,
 });

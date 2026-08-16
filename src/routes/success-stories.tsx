@@ -5,6 +5,7 @@ import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Quote } from "lucide-react";
 import pageBanner from "@/assets/banner-family.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/success-stories")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/success-stories")({
       { name: "description", content: "Read real recovery stories from individuals and families who rebuilt their lives with DeAddictify." },
       { property: "og:title", content: "Success Stories | DeAddictify" },
       { property: "og:description", content: "Real recovery stories from Delhi NCR families." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/success-stories" },
+      { property: "og:url", content: `${SITE_URL}/success-stories` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/success-stories" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/success-stories` }],
   }),
   component: SuccessPage,
 });

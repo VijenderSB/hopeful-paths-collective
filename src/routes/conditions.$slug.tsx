@@ -6,6 +6,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { CONDITIONS, GLOBAL_FAQ } from "@/lib/site";
 import { CheckCircle2, AlertTriangle, Stethoscope, Users, HeartHandshake } from "lucide-react";
 import pageBanner from "@/assets/banner-conditions.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/conditions/$slug")({
   loader: ({ params }) => {
@@ -21,9 +22,9 @@ export const Route = createFileRoute("/conditions/$slug")({
         { name: "description", content: `Affordable, psychiatrist-led ${name.toLowerCase()} treatment, rehabilitation and family support in Delhi NCR.` },
         { property: "og:title", content: `${name} Treatment | DeAddictify` },
         { property: "og:description", content: `Symptoms, warning signs, treatment options and recovery for ${name.toLowerCase()}.` },
-        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/conditions/${loaderData?.condition.slug}` },
+        { property: "og:url", content: `${SITE_URL}/conditions/${loaderData?.condition.slug}` },
       ],
-      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/conditions/${loaderData?.condition.slug}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/conditions/${loaderData?.condition.slug}` }],
     };
   },
   component: ConditionPage,

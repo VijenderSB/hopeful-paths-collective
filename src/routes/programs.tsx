@@ -6,6 +6,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { HOME_FAQ } from "@/lib/site";
 import pageBanner from "@/assets/banner-programs.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/programs")({
       { name: "description", content: "14, 30, 60 & 90-day affordable de-addiction & rehabilitation programs starting from ₹5,999/day. Psychiatrist-led, family-focused." },
       { property: "og:title", content: "Programs & Pricing | DeAddictify" },
       { property: "og:description", content: "Affordable, structured de-addiction programs across Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/programs" },
+      { property: "og:url", content: `${SITE_URL}/programs` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/programs" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/programs` }],
   }),
   component: ProgramsPage,
 });

@@ -15,8 +15,9 @@ import {
 } from "@/lib/up-cities";
 import { CheckCircle2, Quote, Route as RouteIcon } from "lucide-react";
 import pageBanner from "@/assets/banner-locations.jpg";
+import { SITE_URL } from "@/lib/seo";
 
-const SITE = "https://hopeful-paths-collective.lovable.app";
+const SITE = `${SITE_URL}`;
 
 export const Route = createFileRoute("/locations/uttar-pradesh/$city")({
   loader: ({ params }) => {

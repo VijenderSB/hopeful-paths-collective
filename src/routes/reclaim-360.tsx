@@ -5,6 +5,7 @@ import { telLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
 import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import heroBanner from "@/assets/banner-reclaim.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 const TITLE = "RECLAIM 360™ — Complete Addiction Recovery Model | DeAddictify";
 const DESC =
@@ -18,12 +19,12 @@ export const Route = createFileRoute("/reclaim-360")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/reclaim-360" },
+      { property: "og:url", content: `${SITE_URL}/reclaim-360` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "geo.region", content: "IN-DL" },
       { name: "geo.placename", content: "Delhi NCR" },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/reclaim-360" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/reclaim-360` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/reclaim-360")({
           "@type": "MedicalWebPage",
           name: TITLE,
           description: DESC,
-          url: "https://hopeful-paths-collective.lovable.app/reclaim-360",
+          url: `${SITE_URL}/reclaim-360`,
           about: { "@type": "MedicalCondition", name: "Substance use disorder" },
         }),
       },

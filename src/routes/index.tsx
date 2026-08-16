@@ -12,6 +12,7 @@ import beforeAfterImg from "@/assets/before-after-recovery.jpg";
 import blogFamilyImg from "@/assets/blog-family-signs.jpg.asset.json";
 import blogAlcoholImg from "@/assets/blog-alcohol-treatment.jpg.asset.json";
 import blogDrugImg from "@/assets/blog-drug-rehab-cost.jpg.asset.json";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Psychiatrist-led, affordable alcohol & drug de-addiction and rehabilitation programs in Delhi, Noida, Ghaziabad, Faridabad and Gurugram. Free confidential counselling." },
       { property: "og:title", content: "Affordable Alcohol & Drug De-Addiction in Delhi NCR | DeAddictify" },
       { property: "og:description", content: "Free counselling, family-focused recovery, structured rehabilitation across Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/" },
+      { property: "og:url", content: `${SITE_URL}/` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
   component: HomePage,
 });

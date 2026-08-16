@@ -6,6 +6,7 @@ import { PageHero, SectionHeading, FinalCTA, CTARow } from "@/components/site/Bi
 import { UP_TIER2, UP_TIER3, NCR_ALIASES } from "@/lib/up-cities";
 import { MapPin, ArrowRight } from "lucide-react";
 import pageBanner from "@/assets/banner-locations.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 const TITLE = "De-Addiction & Rehab for Uttar Pradesh Patients | Treatment in Delhi NCR | DeAddictify";
 const DESC =
@@ -19,10 +20,10 @@ export const Route = createFileRoute("/locations/uttar-pradesh/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/locations/uttar-pradesh" },
+      { property: "og:url", content: `${SITE_URL}/locations/uttar-pradesh` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/locations/uttar-pradesh" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/locations/uttar-pradesh` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -31,7 +32,7 @@ export const Route = createFileRoute("/locations/uttar-pradesh/")({
           "@type": "CollectionPage",
           name: TITLE,
           description: DESC,
-          url: "https://hopeful-paths-collective.lovable.app/locations/uttar-pradesh",
+          url: `${SITE_URL}/locations/uttar-pradesh`,
           about: { "@type": "Place", name: "Uttar Pradesh, India" },
         }),
       },

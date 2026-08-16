@@ -5,6 +5,7 @@ import { PageHero, FinalCTA, SectionHeading } from "@/components/site/Bits";
 import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { UP_TIER2, UP_TIER3 } from "@/lib/up-cities";
 import pageBanner from "@/assets/banner-locations.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/cities")({
   head: () => ({
@@ -15,9 +16,9 @@ export const Route = createFileRoute("/cities")({
       { property: "og:description", content: "Find de-addiction and rehabilitation support for your city across Delhi NCR and Uttar Pradesh." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/cities" },
+      { property: "og:url", content: `${SITE_URL}/cities` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/cities" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/cities` }],
   }),
   component: CitiesPage,
 });

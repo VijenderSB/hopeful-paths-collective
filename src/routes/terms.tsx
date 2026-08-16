@@ -3,6 +3,7 @@ import { PageHero } from "@/components/site/Bits";
 import { LegalBody, LegalSection } from "@/components/site/Legal";
 import { PHONE_DISPLAY } from "@/lib/site";
 import pageBanner from "@/assets/banner-legal.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:description", content: "Read the terms that govern use of the DeAddictify de-addiction and recovery support platform." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/terms" },
+      { property: "og:url", content: `${SITE_URL}/terms` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/terms` }],
   }),
   component: TermsPage,
 });

@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { CITIES, CONDITIONS, SERVICES, FAMILY_PAGES, BLOG_POSTS } from "@/lib/site";
 import { UP_CITIES } from "@/lib/up-cities";
+import { SITE_URL } from "@/lib/seo";
 
-const BASE_URL = "https://hopeful-paths-collective.lovable.app";
+const BASE_URL = `${SITE_URL}`;
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

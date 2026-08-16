@@ -22,6 +22,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as Reclaim360RouteImport } from './routes/reclaim-360'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -98,6 +99,11 @@ const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
   path: '/rehabilitation-services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -166,6 +172,7 @@ export interface FileRoutesByFullPath {
   '/programs': typeof ProgramsRoute
   '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
@@ -191,6 +198,7 @@ export interface FileRoutesByTo {
   '/programs': typeof ProgramsRoute
   '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
@@ -217,6 +225,7 @@ export interface FileRoutesById {
   '/programs': typeof ProgramsRoute
   '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
@@ -244,6 +253,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/reclaim-360'
     | '/rehabilitation-services'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/success-stories'
     | '/terms'
@@ -269,6 +279,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/reclaim-360'
     | '/rehabilitation-services'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/success-stories'
     | '/terms'
@@ -294,6 +305,7 @@ export interface FileRouteTypes {
     | '/programs'
     | '/reclaim-360'
     | '/rehabilitation-services'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/success-stories'
     | '/terms'
@@ -320,6 +332,7 @@ export interface RootRouteChildren {
   ProgramsRoute: typeof ProgramsRoute
   Reclaim360Route: typeof Reclaim360Route
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   TermsRoute: typeof TermsRoute
@@ -416,6 +429,13 @@ declare module '@tanstack/react-router' {
       path: '/rehabilitation-services'
       fullPath: '/rehabilitation-services'
       preLoaderRoute: typeof RehabilitationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -569,6 +589,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProgramsRoute: ProgramsRoute,
   Reclaim360Route: Reclaim360Route,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   TermsRoute: TermsRoute,
