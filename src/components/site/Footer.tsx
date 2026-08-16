@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 import { telLink, waLink, PHONE_DISPLAY, DISCLAIMER, CITIES, CONDITIONS, PROGRAMS } from "@/lib/site";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 export function Footer() {
   return (
@@ -8,10 +9,14 @@ export function Footer() {
       <div className="container-page py-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-white text-primary font-bold text-lg shadow-lg shadow-white/10">D</span>
-            <span className="text-lg font-bold font-display">DeAddictify</span>
+            <div className="bg-white rounded-xl px-2.5 py-1.5">
+              <img
+                src={logoAsset.url}
+                alt="DeAddictify — Breaking Addiction. Rebuilding Lives."
+                className="h-8 w-auto object-contain"
+              />
+            </div>
           </div>
-          <p className="mt-2 text-sm text-primary-foreground/80">Breaking Addiction. Rebuilding Lives.</p>
           <p className="mt-4 text-sm text-primary-foreground/80">
             Affordable alcohol & drug de-addiction, rehabilitation and recovery assistance across Delhi NCR.
           </p>
