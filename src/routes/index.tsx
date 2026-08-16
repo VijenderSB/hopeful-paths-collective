@@ -112,6 +112,17 @@ function HomePage() {
             </p>
           </div>
 
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="rounded-[2rem] bg-white/10 backdrop-blur border border-white/15 p-6 text-center">
+              <p className="text-xs font-semibold uppercase tracking-wider text-white/60">We Don&apos;t Just Ask</p>
+              <p className="mt-2 text-xl md:text-2xl font-bold text-white">&ldquo;How do we stop the substance?&rdquo;</p>
+            </div>
+            <div className="rounded-[2rem] bg-white/15 backdrop-blur border border-white/30 p-6 text-center">
+              <p className="text-xs font-semibold uppercase tracking-wider text-white/70">We Also Ask</p>
+              <p className="mt-2 text-xl md:text-2xl font-bold text-white">&ldquo;What needs to change so the person can build a life that supports recovery?&rdquo;</p>
+            </div>
+          </div>
+
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {[
               { i: HeartPulse, n: "01", t: "Medical Recovery", d: "Assessment, withdrawal management, physical stabilisation and medical supervision." },
