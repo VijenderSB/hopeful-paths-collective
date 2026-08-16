@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RehabilitationServicesRouteImport } from './routes/rehabilitation-services'
+import { Route as Reclaim360RouteImport } from './routes/reclaim-360'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LocationsRouteImport } from './routes/locations'
@@ -50,6 +51,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const RehabilitationServicesRoute = RehabilitationServicesRouteImport.update({
   id: '/rehabilitation-services',
   path: '/rehabilitation-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Reclaim360Route = Reclaim360RouteImport.update({
+  id: '/reclaim-360',
+  path: '/reclaim-360',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -158,6 +164,7 @@ export interface FileRoutesByFullPath {
   '/locations': typeof LocationsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
+  '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
@@ -182,6 +189,7 @@ export interface FileRoutesByTo {
   '/locations': typeof LocationsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
+  '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/locations': typeof LocationsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/programs': typeof ProgramsRoute
+  '/reclaim-360': typeof Reclaim360Route
   '/rehabilitation-services': typeof RehabilitationServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/success-stories': typeof SuccessStoriesRoute
@@ -233,6 +242,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/privacy'
     | '/programs'
+    | '/reclaim-360'
     | '/rehabilitation-services'
     | '/sitemap.xml'
     | '/success-stories'
@@ -257,6 +267,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/privacy'
     | '/programs'
+    | '/reclaim-360'
     | '/rehabilitation-services'
     | '/sitemap.xml'
     | '/success-stories'
@@ -281,6 +292,7 @@ export interface FileRouteTypes {
     | '/locations'
     | '/privacy'
     | '/programs'
+    | '/reclaim-360'
     | '/rehabilitation-services'
     | '/sitemap.xml'
     | '/success-stories'
@@ -306,6 +318,7 @@ export interface RootRouteChildren {
   LocationsRoute: typeof LocationsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   ProgramsRoute: typeof ProgramsRoute
+  Reclaim360Route: typeof Reclaim360Route
   RehabilitationServicesRoute: typeof RehabilitationServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
@@ -340,6 +353,13 @@ declare module '@tanstack/react-router' {
       path: '/rehabilitation-services'
       fullPath: '/rehabilitation-services'
       preLoaderRoute: typeof RehabilitationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reclaim-360': {
+      id: '/reclaim-360'
+      path: '/reclaim-360'
+      fullPath: '/reclaim-360'
+      preLoaderRoute: typeof Reclaim360RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programs': {
@@ -547,6 +567,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsRoute: LocationsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   ProgramsRoute: ProgramsRoute,
+  Reclaim360Route: Reclaim360Route,
   RehabilitationServicesRoute: RehabilitationServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
