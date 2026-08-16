@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { CITIES, CONDITIONS, SERVICES, FAMILY_PAGES, BLOG_POSTS } from "@/lib/site";
 import { UP_CITIES } from "@/lib/up-cities";
 
-const BASE_URL = "";
+const BASE_URL = "https://hopeful-paths-collective.lovable.app";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
