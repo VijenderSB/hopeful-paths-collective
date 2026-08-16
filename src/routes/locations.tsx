@@ -1,6 +1,8 @@
 import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
-import { CITIES } from "@/lib/site";
+import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { MapPin, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/locations")({
@@ -48,6 +50,8 @@ function LocationsLayout() {
           </Link>
         </div>
       </section>
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

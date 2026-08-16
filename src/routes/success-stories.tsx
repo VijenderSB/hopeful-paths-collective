@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { GLOBAL_FAQ } from "@/lib/site";
+import { FAQ } from "@/components/site/FAQ";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Quote } from "lucide-react";
@@ -49,6 +51,7 @@ function SuccessPage() {
         </div>
       </section>
       <section className="container-page pb-16"><div className="max-w-2xl mx-auto"><LeadForm /></div></section>
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { GLOBAL_FAQ } from "@/lib/site";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA, CTARow } from "@/components/site/Bits";
 import { UP_TIER2, UP_TIER3, NCR_ALIASES } from "@/lib/up-cities";
 import { MapPin, ArrowRight } from "lucide-react";
@@ -116,6 +119,8 @@ function UPIndex() {
         <CityGrid cities={UP_TIER3} />
       </section>
 
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

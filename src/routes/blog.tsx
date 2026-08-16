@@ -1,4 +1,7 @@
 import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
+import { GLOBAL_FAQ } from "@/lib/site";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog";
 
@@ -47,6 +50,8 @@ function BlogLayout() {
           ))}
         </div>
       </section>
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

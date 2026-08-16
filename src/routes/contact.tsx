@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
-import { telLink, waLink, PHONE_DISPLAY } from "@/lib/site";
+import { telLink, waLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -47,6 +49,8 @@ function ContactPage() {
         </div>
         <LeadForm />
       </section>
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

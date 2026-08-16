@@ -1,6 +1,8 @@
 import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
-import { CONDITIONS } from "@/lib/site";
+import { CONDITIONS, GLOBAL_FAQ } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/conditions")({
@@ -36,6 +38,8 @@ function ConditionsLayout() {
           ))}
         </div>
       </section>
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

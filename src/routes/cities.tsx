@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { FAQ } from "@/components/site/FAQ";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, FinalCTA, SectionHeading } from "@/components/site/Bits";
-import { CITIES } from "@/lib/site";
+import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { UP_TIER2, UP_TIER3 } from "@/lib/up-cities";
 
 export const Route = createFileRoute("/cities")({
@@ -80,6 +82,8 @@ function CitiesPage() {
         </p>
       </section>
 
+      <Testimonials />
+      <FAQ items={GLOBAL_FAQ.slice(0, 8)} />
       <FinalCTA />
     </>
   );

@@ -1,4 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, FinalCTA, CTARow } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
@@ -106,6 +107,7 @@ function ConditionPage() {
       </section>
 
       <FAQ items={GLOBAL_FAQ.slice(0, 8)} title={`FAQs about ${name}`} />
+      <Testimonials />
       <FinalCTA />
     </>
   );
