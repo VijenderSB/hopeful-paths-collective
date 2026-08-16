@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { MapPin, ArrowRight } from "lucide-react";
+import pageBanner from "@/assets/banner-locations.jpg";
 
 export const Route = createFileRoute("/locations")({
   head: () => ({
@@ -24,7 +25,7 @@ function LocationsLayout() {
   if (matches.some((m) => m.routeId !== "/locations" && m.routeId.startsWith("/locations"))) return <Outlet />;
   return (
     <>
-      <PageHero eyebrow="Delhi NCR Coverage" title="De-Addiction Across Delhi NCR" subtitle="Affordable de-addiction and rehabilitation programs in every major Delhi NCR city." />
+      <PageHero image={pageBanner} eyebrow="Delhi NCR Coverage" title="De-Addiction Across Delhi NCR" subtitle="Affordable de-addiction and rehabilitation programs in every major Delhi NCR city." />
       <section className="container-page py-16">
         <SectionHeading title="Choose Your City" />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

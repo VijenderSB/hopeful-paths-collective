@@ -4,6 +4,7 @@ import { PageHero, FinalCTA, CTARow } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { FAMILY_PAGES, GLOBAL_FAQ } from "@/lib/site";
+import pageBanner from "@/assets/banner-family.jpg";
 
 export const Route = createFileRoute("/family-support/$slug")({
   loader: ({ params }) => {
@@ -37,7 +38,7 @@ function FamilyPage() {
   const { page } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow="Family Support" title={page.name} subtitle="You are not alone. Our counsellors will help you understand the situation and take the next right step.">
+      <PageHero image={pageBanner} eyebrow="Family Support" title={page.name} subtitle="You are not alone. Our counsellors will help you understand the situation and take the next right step.">
         <CTARow light />
       </PageHero>
       <section className="container-page py-14 grid gap-10 lg:grid-cols-[1.4fr_1fr] items-start">

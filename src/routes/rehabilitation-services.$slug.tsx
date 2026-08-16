@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { SERVICES, GLOBAL_FAQ } from "@/lib/site";
 import { CheckCircle2 } from "lucide-react";
+import pageBanner from "@/assets/banner-services.jpg";
 
 export const Route = createFileRoute("/rehabilitation-services/$slug")({
   loader: ({ params }) => {
@@ -43,7 +44,7 @@ function ServicePage() {
 
   return (
     <>
-      <PageHero eyebrow="Rehabilitation Service" title={name} subtitle={`What ${name.toLowerCase()} involves, who needs it, and what to expect.`}>
+      <PageHero image={pageBanner} eyebrow="Rehabilitation Service" title={name} subtitle={`What ${name.toLowerCase()} involves, who needs it, and what to expect.`}>
         <CTARow light />
       </PageHero>
 

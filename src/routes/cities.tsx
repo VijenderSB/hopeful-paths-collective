@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, FinalCTA, SectionHeading } from "@/components/site/Bits";
 import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { UP_TIER2, UP_TIER3 } from "@/lib/up-cities";
+import pageBanner from "@/assets/banner-locations.jpg";
 
 export const Route = createFileRoute("/cities")({
   head: () => ({
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/cities")({
 function CitiesPage() {
   return (
     <>
-      <PageHero
+      <PageHero image={pageBanner}
         eyebrow="Coverage"
         title="Cities We Serve"
         subtitle="Treatment is delivered at affiliated Delhi NCR centres. Families from across Uttar Pradesh travel in for assessment, detox and residential recovery — pick your city to see local guidance, travel routes and costs."

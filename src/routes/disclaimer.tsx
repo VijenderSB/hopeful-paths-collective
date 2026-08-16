@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/Bits";
 import { LegalBody, LegalSection } from "@/components/site/Legal";
 import { DISCLAIMER, PHONE_DISPLAY } from "@/lib/site";
+import pageBanner from "@/assets/banner-legal.jpg";
 
 export const Route = createFileRoute("/disclaimer")({
   head: () => ({
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/disclaimer")({
 function DisclaimerPage() {
   return (
     <>
-      <PageHero eyebrow="Legal" title="Disclaimer" subtitle="What this website is, what it is not, and what we can and cannot promise about addiction treatment." />
+      <PageHero image={pageBanner} eyebrow="Legal" title="Disclaimer" subtitle="What this website is, what it is not, and what we can and cannot promise about addiction treatment." />
       <LegalBody updated="15 August 2026">
         <LegalSection title="1. General disclaimer">
           <p>{DISCLAIMER}</p>

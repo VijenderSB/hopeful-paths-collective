@@ -4,6 +4,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog";
+import pageBanner from "@/assets/banner-blog.jpg";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -26,7 +27,7 @@ function BlogLayout() {
   if (matches.some((m) => m.routeId === "/blog/$slug")) return <Outlet />;
   return (
     <>
-      <PageHero eyebrow="Blog" title="Addiction, Recovery & Family Support" subtitle="Practical, compassionate articles to help individuals and families across Delhi NCR navigate de-addiction treatment and recovery." />
+      <PageHero image={pageBanner} eyebrow="Blog" title="Addiction, Recovery & Family Support" subtitle="Practical, compassionate articles to help individuals and families across Delhi NCR navigate de-addiction treatment and recovery." />
       <section className="container-page py-14">
         <div className="flex flex-wrap gap-2">
           {BLOG_CATEGORIES.map((c) => (

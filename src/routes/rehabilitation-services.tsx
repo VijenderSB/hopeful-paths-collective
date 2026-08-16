@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { SERVICES, GLOBAL_FAQ } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
+import pageBanner from "@/assets/banner-services.jpg";
 
 export const Route = createFileRoute("/rehabilitation-services")({
   head: () => ({
@@ -24,7 +25,7 @@ function ServicesLayout() {
   if (matches.some((m) => m.routeId === "/rehabilitation-services/$slug")) return <Outlet />;
   return (
     <>
-      <PageHero eyebrow="Rehabilitation Services" title="Full-Spectrum De-Addiction Care" subtitle="Detoxification, psychiatric care, individual & group therapy, family counselling and structured aftercare." />
+      <PageHero image={pageBanner} eyebrow="Rehabilitation Services" title="Full-Spectrum De-Addiction Care" subtitle="Detoxification, psychiatric care, individual & group therapy, family counselling and structured aftercare." />
       <section className="container-page py-16">
         <SectionHeading title="All Services" />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

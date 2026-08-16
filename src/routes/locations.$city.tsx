@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { CITIES, GLOBAL_FAQ, WHY_CHOOSE } from "@/lib/site";
 import { CheckCircle2, MapPin, Quote } from "lucide-react";
+import pageBanner from "@/assets/banner-locations.jpg";
 
 export const Route = createFileRoute("/locations/$city")({
   loader: ({ params }) => {
@@ -39,7 +40,7 @@ function CityPage() {
   const name = city.name;
   return (
     <>
-      <PageHero eyebrow={`Delhi NCR · ${name}`} title={`De-Addiction Centre in ${name}`} subtitle={`Affordable alcohol & drug de-addiction, rehabilitation and recovery support for individuals and families in ${name}.`}>
+      <PageHero image={pageBanner} eyebrow={`Delhi NCR · ${name}`} title={`De-Addiction Centre in ${name}`} subtitle={`Affordable alcohol & drug de-addiction, rehabilitation and recovery support for individuals and families in ${name}.`}>
         <CTARow light />
       </PageHero>
 

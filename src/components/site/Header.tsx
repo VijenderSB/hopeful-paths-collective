@@ -8,11 +8,11 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/conditions", label: "Conditions We Treat" },
-  { to: "/reclaim-360", label: "RECLAIM 360™" },
+  { to: "/reclaim-360", label: "RECLAIM 360™", highlight: true },
   { to: "/programs", label: "Programs & Pricing" },
   { to: "/rehabilitation-services", label: "Rehabilitation Services" },
   { to: "/contact", label: "Contact" },
-] as const;
+] as { to: string; label: string; highlight?: boolean }[];
 
 export function HelplineBar() {
   return (
@@ -46,8 +46,12 @@ export function Header() {
               <Link
                 key={n.to}
                 to={n.to}
-                className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary rounded-xl hover:bg-secondary transition-colors"
-                activeProps={{ className: "text-primary bg-secondary" }}
+                className={
+                  n.highlight
+                    ? "px-3 py-2 text-sm font-bold rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md shadow-primary/25 hover:opacity-95 transition-opacity"
+                    : "px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary rounded-xl hover:bg-secondary transition-colors"
+                }
+                activeProps={{ className: n.highlight ? "ring-2 ring-accent/40" : "text-primary bg-secondary" }}
                 activeOptions={{ exact: n.to === "/" }}
               >
                 {n.label}
@@ -71,8 +75,12 @@ export function Header() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-secondary"
-                  activeProps={{ className: "text-primary bg-secondary" }}
+                  className={
+                    n.highlight
+                      ? "px-3 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-primary to-accent text-primary-foreground"
+                      : "px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-secondary"
+                  }
+                  activeProps={{ className: n.highlight ? "" : "text-primary bg-secondary" }}
                   activeOptions={{ exact: n.to === "/" }}
                 >
                   {n.label}

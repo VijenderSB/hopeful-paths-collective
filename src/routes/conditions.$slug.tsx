@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { CONDITIONS, GLOBAL_FAQ } from "@/lib/site";
 import { CheckCircle2, AlertTriangle, Stethoscope, Users, HeartHandshake } from "lucide-react";
+import pageBanner from "@/assets/banner-conditions.jpg";
 
 export const Route = createFileRoute("/conditions/$slug")({
   loader: ({ params }) => {
@@ -45,7 +46,7 @@ function ConditionPage() {
 
   return (
     <>
-      <PageHero eyebrow="Conditions We Treat" title={`${name} Treatment`} subtitle={`Structured, affordable and psychiatrist-led ${name.toLowerCase()} treatment with full family support — across Delhi NCR.`}>
+      <PageHero image={pageBanner} eyebrow="Conditions We Treat" title={`${name} Treatment`} subtitle={`Structured, affordable and psychiatrist-led ${name.toLowerCase()} treatment with full family support — across Delhi NCR.`}>
         <CTARow light />
       </PageHero>
 

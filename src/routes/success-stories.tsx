@@ -4,6 +4,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { Quote } from "lucide-react";
+import pageBanner from "@/assets/banner-family.jpg";
 
 export const Route = createFileRoute("/success-stories")({
   head: () => ({
@@ -31,7 +32,7 @@ const STORIES = [
 function SuccessPage() {
   return (
     <>
-      <PageHero eyebrow="Recovery Stories" title="Real Lives. Real Recovery." subtitle="Every story here represents a family that found its way back. Yours can be next." />
+      <PageHero image={pageBanner} eyebrow="Recovery Stories" title="Real Lives. Real Recovery." subtitle="Every story here represents a family that found its way back. Yours can be next." />
       <section className="container-page py-16">
         <SectionHeading center title="Voices of Recovery" />
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -42,13 +42,25 @@ export function FinalCTA() {
   );
 }
 
-export function PageHero({ eyebrow, title, subtitle, children }: { eyebrow?: string; title: string; subtitle?: string; children?: ReactNode }) {
+export function PageHero({ eyebrow, title, subtitle, children, image, imageAlt }: { eyebrow?: string; title: string; subtitle?: string; children?: ReactNode; image?: string; imageAlt?: string }) {
   return (
-    <section className="hero-gradient text-white">
-      <div className="container-page py-14 md:py-20">
-        {eyebrow && <div className="inline-flex items-center gap-2 rounded-full bg-white/12 border border-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/80">{eyebrow}</div>}
-        <h1 className="mt-3 text-3xl md:text-5xl font-bold max-w-3xl leading-tight">{title}</h1>
-        {subtitle && <p className="mt-4 max-w-2xl text-white/80 text-base md:text-lg">{subtitle}</p>}
+    <section className="relative overflow-hidden hero-gradient text-white">
+      {image && (
+        <>
+          <img
+            src={image}
+            alt={imageAlt ?? title}
+            width={1600}
+            height={704}
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/55" />
+        </>
+      )}
+      <div className="container-page relative z-10 py-14 md:py-20">
+        {eyebrow && <div className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/90">{eyebrow}</div>}
+        <h1 className="mt-3 text-3xl md:text-5xl font-bold max-w-3xl leading-tight drop-shadow-sm">{title}</h1>
+        {subtitle && <p className="mt-4 max-w-2xl text-white/85 text-base md:text-lg">{subtitle}</p>}
         {children && <div className="mt-6">{children}</div>}
       </div>
     </section>

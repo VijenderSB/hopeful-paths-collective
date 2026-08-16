@@ -5,6 +5,7 @@ import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { FAMILY_PAGES, GLOBAL_FAQ } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
 import { HeartHandshake } from "lucide-react";
+import pageBanner from "@/assets/banner-family.jpg";
 
 export const Route = createFileRoute("/family-support")({
   head: () => ({
@@ -25,7 +26,7 @@ function FamilyLayout() {
   if (matches.some((m) => m.routeId === "/family-support/$slug")) return <Outlet />;
   return (
     <>
-      <PageHero eyebrow="Family Support" title="You Are Not Alone In This Journey" subtitle="When a loved one struggles with addiction, the family struggles too. Our counsellors stand beside you with empathy, clarity and structured support." />
+      <PageHero image={pageBanner} eyebrow="Family Support" title="You Are Not Alone In This Journey" subtitle="When a loved one struggles with addiction, the family struggles too. Our counsellors stand beside you with empathy, clarity and structured support." />
       <section className="container-page py-16 grid gap-10 lg:grid-cols-[1.4fr_1fr] items-start">
         <div>
           <SectionHeading title="Family Support Library" subtitle="Practical, emotional and clinical guidance for every stage of your family's recovery." />
