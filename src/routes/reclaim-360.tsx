@@ -4,6 +4,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { telLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
 import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
+import heroBanner from "@/assets/banner-reclaim.jpg";
 
 const TITLE = "RECLAIM 360™ — Complete Addiction Recovery Model | DeAddictify";
 const DESC =
@@ -40,6 +41,8 @@ function Reclaim360Page() {
   return (
     <>
       <section className="relative overflow-hidden hero-gradient text-white">
+        <img src={heroBanner} alt="Psychiatrist-led counselling session with a patient at DeAddictify, Delhi NCR" width={1600} height={704} className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/85 to-primary/95" />
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
         <div className="container-page relative z-10 py-16 md:py-20 text-center">
