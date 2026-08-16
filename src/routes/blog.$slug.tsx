@@ -20,9 +20,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: p?.metaDescription ?? "" },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:url", content: `/blog/${p?.slug}` },
+        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/blog/${p?.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/blog/${p?.slug}` }],
+      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/blog/${p?.slug}` }],
     };
   },
   component: PostPage,

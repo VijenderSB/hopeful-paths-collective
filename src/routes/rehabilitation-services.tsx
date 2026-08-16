@@ -13,9 +13,9 @@ export const Route = createFileRoute("/rehabilitation-services")({
       { name: "description", content: "Medical detox, psychiatric care, counselling, group therapy, family therapy, relapse prevention and aftercare across Delhi NCR." },
       { property: "og:title", content: "Rehabilitation Services | DeAddictify" },
       { property: "og:description", content: "End-to-end de-addiction & rehabilitation services in Delhi NCR." },
-      { property: "og:url", content: "/rehabilitation-services" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/rehabilitation-services" },
     ],
-    links: [{ rel: "canonical", href: "/rehabilitation-services" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/rehabilitation-services" }],
   }),
   component: ServicesLayout,
 });

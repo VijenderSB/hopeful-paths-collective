@@ -15,9 +15,9 @@ export const Route = createFileRoute("/blog")({
       { property: "og:description", content: "Guidance for individuals and families navigating addiction and recovery in Delhi NCR." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/blog" }],
   }),
   component: BlogLayout,
 });

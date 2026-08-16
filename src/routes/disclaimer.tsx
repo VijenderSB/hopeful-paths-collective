@@ -14,7 +14,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/disclaimer" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/disclaimer" }],
   }),
   component: DisclaimerPage,
 });

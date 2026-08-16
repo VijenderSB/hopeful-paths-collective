@@ -14,9 +14,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Call, WhatsApp or book free counselling. 24×7 confidential helpline for alcohol & drug de-addiction in Delhi NCR." },
       { property: "og:title", content: "Contact DeAddictify" },
       { property: "og:description", content: "Free, confidential de-addiction counselling. 24×7 helpline." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/contact" }],
   }),
   component: ContactPage,
 });

@@ -14,9 +14,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "DeAddictify is an affordable, psychiatrist-led de-addiction and recovery platform for Delhi NCR. Learn our mission, vision and how we help families." },
       { property: "og:title", content: "About DeAddictify" },
       { property: "og:description", content: "Affordable psychiatrist-led de-addiction & recovery support across Delhi NCR." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/about" }],
   }),
   component: AboutPage,
 });

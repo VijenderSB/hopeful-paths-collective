@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Psychiatrist-led, affordable alcohol & drug de-addiction and rehabilitation programs in Delhi, Noida, Ghaziabad, Faridabad and Gurugram. Free confidential counselling." },
       { property: "og:title", content: "Affordable Alcohol & Drug De-Addiction in Delhi NCR | DeAddictify" },
       { property: "og:description", content: "Free counselling, family-focused recovery, structured rehabilitation across Delhi NCR." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/" }],
   }),
   component: HomePage,
 });

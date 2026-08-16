@@ -16,7 +16,7 @@ export const Route = createFileRoute("/cities")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/cities" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/cities" }],
   }),
   component: CitiesPage,
 });

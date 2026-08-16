@@ -14,9 +14,9 @@ export const Route = createFileRoute("/family-support")({
       { name: "description", content: "Compassionate guidance for families navigating a loved one's addiction — counselling, intervention support, recovery and relapse management." },
       { property: "og:title", content: "Family Support Center | DeAddictify" },
       { property: "og:description", content: "Help for families dealing with alcohol or drug addiction in Delhi NCR." },
-      { property: "og:url", content: "/family-support" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/family-support" },
     ],
-    links: [{ rel: "canonical", href: "/family-support" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/family-support" }],
   }),
   component: FamilyLayout,
 });
