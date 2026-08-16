@@ -7,8 +7,9 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Self-hosting: `npm run build:node` sets NITRO_PRESET=node-server so the build
-// emits a plain Node.js SSR server (dist/server/index.mjs). Without the env var
-// the default Lovable/Cloudflare target is used.
+// emits a plain Node.js SSR server at .output/server/index.mjs.
+// Inside the Lovable build environment this is ignored and the managed
+// Cloudflare target is used, so Lovable preview/publish keeps working.
 const preset = process.env.NITRO_PRESET;
 
 export default defineConfig({
@@ -17,5 +18,16 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  ...(preset ? { nitro: { preset } } : {}),
+  ...(preset
+    ? {
+        nitro: {
+          preset,
+          output: {
+            dir: ".output",
+            serverDir: ".output/server",
+            publicDir: ".output/public",
+          },
+        },
+      }
+    : {}),
 });

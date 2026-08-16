@@ -31,6 +31,9 @@ npm ci            # or: bun install
 npm run build:node
 ```
 
+Note: this must be run on your own machine, CI, or server — inside Lovable's
+build environment the target is always Lovable's managed hosting.
+
 Output is written to `.output/`:
 
 - `.output/server/index.mjs` — the SSR server
