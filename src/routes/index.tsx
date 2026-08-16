@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, ShieldCheck, HeartHandshake, Users, Stethoscope, MapPin, Phone, MessageCircle, ArrowRight, Quote, Play } from "lucide-react";
+import { CheckCircle2, ShieldCheck, HeartHandshake, Users, Stethoscope, MapPin, Phone, MessageCircle, ArrowRight, Quote, Play, HeartPulse, Brain, RefreshCw, Smile, Dumbbell, Briefcase, Route } from "lucide-react";
 import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { ProgramCards, PricingCompare, PricingDisclosure } from "@/components/site/Programs";
