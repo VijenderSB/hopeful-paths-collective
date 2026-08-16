@@ -13,6 +13,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:description", content: "Our confidentiality commitments for patients and families seeking de-addiction treatment." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/privacy" },
     ],
     links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/privacy" }],
   }),

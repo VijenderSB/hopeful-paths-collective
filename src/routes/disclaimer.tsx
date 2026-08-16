@@ -13,6 +13,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:description", content: "Important medical and legal disclaimers for patients and families using DeAddictify." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/disclaimer" },
     ],
     links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/disclaimer" }],
   }),
