@@ -151,18 +151,8 @@ export const GLOBAL_FAQ: [string, string][] = [
   ["What is aftercare?", "Continued support after discharge — counselling, family check-ins and recovery monitoring."],
 ];
 
-export const BLOG_POSTS = [
-  { slug: "10-signs-loved-one-needs-de-addiction-help", title: "10 Signs Your Loved One Needs De-Addiction Help", category: "Family Support", excerpt: "Recognising early signs of addiction can save lives. Here's what to look for and when to seek help." },
-  { slug: "alcohol-addiction-treatment-options-delhi-ncr", title: "Alcohol Addiction Treatment Options in Delhi NCR", category: "Alcohol Addiction", excerpt: "A clear guide to detox, residential rehab and long-term recovery options available across Delhi NCR." },
-  { slug: "drug-rehab-cost-delhi-ncr", title: "Drug Rehab Cost in Delhi NCR", category: "Drug Addiction", excerpt: "Understand what determines the cost of drug rehab and how to choose an affordable, effective program." },
-  { slug: "how-to-convince-someone-to-join-rehab", title: "How To Convince Someone To Join Rehab", category: "Family Support", excerpt: "Practical, compassionate strategies for families ready to start the conversation." },
-  { slug: "what-happens-during-alcohol-detox", title: "What Happens During Alcohol Detox?", category: "Withdrawal Symptoms", excerpt: "A day-by-day overview of medically supervised alcohol detoxification." },
-  { slug: "why-relapse-happens-after-rehab", title: "Why Relapse Happens After Rehab", category: "Relapse Prevention", excerpt: "Common relapse triggers and how a structured aftercare plan keeps recovery on track." },
-  { slug: "how-families-can-support-addiction-recovery", title: "How Families Can Support Addiction Recovery", category: "Family Support", excerpt: "The family's role is one of the strongest predictors of long-term recovery." },
-  { slug: "difference-between-detox-and-rehabilitation", title: "Difference Between Detox and Rehabilitation", category: "Recovery Tips", excerpt: "Detox is the start. Rehabilitation is the journey. Here's how they fit together." },
-  { slug: "14-day-vs-30-day-rehab-program", title: "14-Day vs 30-Day Rehab Program", category: "Recovery Tips", excerpt: "Which program duration fits your loved one's situation? A practical comparison." },
-  { slug: "how-to-identify-drug-addiction-in-young-adults", title: "How To Identify Drug Addiction In Young Adults", category: "Drug Addiction", excerpt: "Behavioural, physical and emotional warning signs parents should not ignore." },
-];
+export { BLOG_POSTS } from "./blog";
+
 
 export const BLOG_CATEGORIES = [
   "Alcohol Addiction",
