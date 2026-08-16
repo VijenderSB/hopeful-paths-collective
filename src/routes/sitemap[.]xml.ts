@@ -10,7 +10,7 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const paths: string[] = [
-          "/", "/about", "/conditions", "/programs", "/rehabilitation-services",
+          "/", "/about", "/reclaim-360", "/conditions", "/programs", "/rehabilitation-services",
           "/family-support", "/locations", "/cities", "/success-stories", "/blog", "/contact",
           "/privacy", "/terms", "/disclaimer",
         ];
