@@ -11,7 +11,6 @@ const NAV = [
   { to: "/reclaim-360", label: "RECLAIM 360™" },
   { to: "/programs", label: "Programs & Pricing" },
   { to: "/rehabilitation-services", label: "Rehabilitation Services" },
-  { to: "/family-support", label: "Family Support" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
