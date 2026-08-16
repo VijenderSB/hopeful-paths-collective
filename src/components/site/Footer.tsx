@@ -12,7 +12,7 @@ export function Footer() {
             <img
               src={logoFooterAsset.url}
               alt="DeAddictify — Breaking Addiction. Rebuilding Lives."
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </div>
           <p className="mt-4 text-sm text-primary-foreground/80">

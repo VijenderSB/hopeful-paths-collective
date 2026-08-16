@@ -38,7 +38,7 @@ export function Header() {
             <img
               src={logoAsset.url}
               alt="DeAddictify — Breaking Addiction. Rebuilding Lives."
-              className="h-9 w-auto object-contain"
+              className="h-11 w-auto object-contain"
             />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
