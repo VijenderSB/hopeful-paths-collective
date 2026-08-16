@@ -93,20 +93,22 @@ function HomePage() {
 
 
       {/* RECLAIM 360 USP */}
-      <section className="relative overflow-hidden hero-gradient text-white">
-        <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
+      <section className="relative overflow-hidden bg-secondary border-y border-primary/15">
+        <div className="h-1.5 w-full bg-gradient-to-r from-primary via-accent to-primary" />
+        <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         <div className="container-page relative z-10 py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/12 border border-white/25 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/90">
-              Our Approach
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-primary-foreground shadow-md shadow-primary/25">
+              Our Signature Approach
             </div>
-            <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight text-primary">
               Introducing RECLAIM 360™
             </h2>
-            <p className="mt-3 text-base md:text-lg text-white/90">
+            <p className="mt-3 text-base md:text-lg font-semibold text-accent-foreground">
               Beyond De-Addiction. Rebuilding the Person, Family &amp; Life.
             </p>
-            <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed">
+            <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
               Stopping the substance is only the first milestone. RECLAIM 360™ treats recovery across eight
               connected dimensions — so the body heals, the mind steadies, the family recovers and daily life
               becomes strong enough to hold sobriety.
@@ -124,35 +126,36 @@ function HomePage() {
               { icon: Briefcase, t: "Life Reintegration", d: "Return to work, study, finances and social confidence." },
               { icon: ShieldCheck, t: "Recovery Continuity", d: "Aftercare, monitoring and long-term relapse safeguards." },
             ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="rounded-[1.75rem] bg-white/10 backdrop-blur border border-white/15 p-5 text-left">
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-white/15">
-                  <Icon className="h-5 w-5 text-white" />
+              <div key={t} className="rounded-[1.75rem] bg-card border border-primary/12 shadow-sm p-5 text-left card-hover">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10">
+                  <Icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="mt-3 text-base font-bold text-white">{t}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-white/75">{d}</p>
+                <h3 className="mt-3 text-base font-bold text-primary">{t}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{d}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-10 text-center text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+          <p className="mt-10 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
             The RECLAIM 360™ Journey
           </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold text-white">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold">
             {["STABILISE", "UNDERSTAND", "HEAL", "REBUILD", "RECONNECT", "REINTEGRATE", "SUSTAIN"].map((step, idx, arr) => (
               <span key={step} className="flex items-center gap-2">
-                <span className="rounded-full bg-white/15 px-3 py-1">{step}</span>
-                {idx < arr.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-white/50" />}
+                <span className="rounded-full bg-card border border-primary/20 px-3 py-1 text-primary">{step}</span>
+                {idx < arr.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-accent-foreground/60" />}
               </span>
             ))}
           </div>
 
           <div className="mt-8 text-center">
-            <Link to="/reclaim-360" className="inline-flex h-11 items-center gap-2 rounded-2xl bg-white px-6 text-sm font-semibold text-primary hover:opacity-95">
+            <Link to="/reclaim-360" className="inline-flex h-11 items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-accent px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 hover:opacity-95">
               Explore RECLAIM 360™ <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
+
 
 
 
