@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { telLink, PHONE_DISPLAY } from "@/lib/site";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -34,11 +35,11 @@ export function Header() {
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground font-bold text-lg shadow-lg shadow-primary/20">D</span>
-            <span className="flex flex-col leading-none">
-              <span className="text-lg font-bold text-primary font-display">DeAddictify</span>
-              <span className="text-[10px] text-muted-foreground">Breaking Addiction. Rebuilding Lives.</span>
-            </span>
+            <img
+              src={logoAsset.url}
+              alt="DeAddictify — Breaking Addiction. Rebuilding Lives."
+              className="h-9 w-auto object-contain"
+            />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {NAV.map((n) => (
