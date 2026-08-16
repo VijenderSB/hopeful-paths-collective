@@ -6,6 +6,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { telLink, waLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import pageBanner from "@/assets/banner-contact.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Call, WhatsApp or book free counselling. 24×7 confidential helpline for alcohol & drug de-addiction in Delhi NCR." },
       { property: "og:title", content: "Contact DeAddictify" },
       { property: "og:description", content: "Free, confidential de-addiction counselling. 24×7 helpline." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/contact" },
+      { property: "og:url", content: `${SITE_URL}/contact` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: ContactPage,
 });

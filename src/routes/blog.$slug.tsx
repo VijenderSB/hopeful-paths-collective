@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { PageHero, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { BLOG_POSTS } from "@/lib/blog";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: p?.metaDescription ?? "" },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/blog/${p?.slug}` },
+        { property: "og:url", content: `${SITE_URL}/blog/${p?.slug}` },
       ],
-      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/blog/${p?.slug}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/blog/${p?.slug}` }],
     };
   },
   component: PostPage,

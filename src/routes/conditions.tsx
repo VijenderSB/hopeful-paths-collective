@@ -5,6 +5,7 @@ import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { CONDITIONS, GLOBAL_FAQ } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 import pageBanner from "@/assets/banner-conditions.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/conditions")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/conditions")({
       { name: "description", content: "Comprehensive de-addiction & treatment for alcohol, drugs, cannabis, heroin, cocaine, prescription dependence and dual diagnosis across Delhi NCR." },
       { property: "og:title", content: "Conditions We Treat | DeAddictify" },
       { property: "og:description", content: "Alcohol, drugs, dual diagnosis and more — psychiatrist-led treatment in Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/conditions" },
+      { property: "og:url", content: `${SITE_URL}/conditions` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/conditions" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/conditions` }],
   }),
   component: ConditionsLayout,
 });

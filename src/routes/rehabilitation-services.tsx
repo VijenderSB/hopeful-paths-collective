@@ -5,6 +5,7 @@ import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { SERVICES, GLOBAL_FAQ } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 import pageBanner from "@/assets/banner-services.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/rehabilitation-services")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/rehabilitation-services")({
       { name: "description", content: "Medical detox, psychiatric care, counselling, group therapy, family therapy, relapse prevention and aftercare across Delhi NCR." },
       { property: "og:title", content: "Rehabilitation Services | DeAddictify" },
       { property: "og:description", content: "End-to-end de-addiction & rehabilitation services in Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/rehabilitation-services" },
+      { property: "og:url", content: `${SITE_URL}/rehabilitation-services` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/rehabilitation-services" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/rehabilitation-services` }],
   }),
   component: ServicesLayout,
 });

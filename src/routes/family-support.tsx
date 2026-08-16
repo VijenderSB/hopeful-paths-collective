@@ -6,6 +6,7 @@ import { FAMILY_PAGES, GLOBAL_FAQ } from "@/lib/site";
 import { LeadForm } from "@/components/site/LeadForm";
 import { HeartHandshake } from "lucide-react";
 import pageBanner from "@/assets/banner-family.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/family-support")({
   head: () => ({
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/family-support")({
       { name: "description", content: "Compassionate guidance for families navigating a loved one's addiction — counselling, intervention support, recovery and relapse management." },
       { property: "og:title", content: "Family Support Center | DeAddictify" },
       { property: "og:description", content: "Help for families dealing with alcohol or drug addiction in Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/family-support" },
+      { property: "og:url", content: `${SITE_URL}/family-support` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/family-support" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/family-support` }],
   }),
   component: FamilyLayout,
 });

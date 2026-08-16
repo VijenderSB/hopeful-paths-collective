@@ -5,6 +5,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/blog";
 import pageBanner from "@/assets/banner-blog.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -15,9 +16,9 @@ export const Route = createFileRoute("/blog")({
       { property: "og:description", content: "Guidance for individuals and families navigating addiction and recovery in Delhi NCR." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/blog" },
+      { property: "og:url", content: `${SITE_URL}/blog` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/blog" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
   }),
   component: BlogLayout,
 });

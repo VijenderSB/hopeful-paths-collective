@@ -6,6 +6,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { CITIES, GLOBAL_FAQ, WHY_CHOOSE } from "@/lib/site";
 import { CheckCircle2, MapPin, Quote } from "lucide-react";
 import pageBanner from "@/assets/banner-locations.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/locations/$city")({
   loader: ({ params }) => {
@@ -21,9 +22,9 @@ export const Route = createFileRoute("/locations/$city")({
         { name: "description", content: `Affordable alcohol & drug de-addiction, rehabilitation and recovery support in ${name}. Psychiatrist-led, family-focused care.` },
         { property: "og:title", content: `De-Addiction Centre in ${name} | DeAddictify` },
         { property: "og:description", content: `Affordable rehab and recovery programs in ${name}.` },
-        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/locations/${loaderData?.city.slug}` },
+        { property: "og:url", content: `${SITE_URL}/locations/${loaderData?.city.slug}` },
       ],
-      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/locations/${loaderData?.city.slug}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/locations/${loaderData?.city.slug}` }],
     };
   },
   component: CityPage,

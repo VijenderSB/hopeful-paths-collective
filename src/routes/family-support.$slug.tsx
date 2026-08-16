@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { FAMILY_PAGES, GLOBAL_FAQ } from "@/lib/site";
 import pageBanner from "@/assets/banner-family.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/family-support/$slug")({
   loader: ({ params }) => {
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/family-support/$slug")({
         { name: "description", content: `Compassionate, practical guidance: ${name}. Speak with a family counsellor today.` },
         { property: "og:title", content: `${name} | DeAddictify` },
         { property: "og:description", content: `Family support: ${name}` },
-        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/family-support/${loaderData?.page.slug}` },
+        { property: "og:url", content: `${SITE_URL}/family-support/${loaderData?.page.slug}` },
       ],
-      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/family-support/${loaderData?.page.slug}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/family-support/${loaderData?.page.slug}` }],
     };
   },
   component: FamilyPage,

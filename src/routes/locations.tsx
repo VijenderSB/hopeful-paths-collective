@@ -5,6 +5,7 @@ import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { CITIES, GLOBAL_FAQ } from "@/lib/site";
 import { MapPin, ArrowRight } from "lucide-react";
 import pageBanner from "@/assets/banner-locations.jpg";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/locations")({
   head: () => ({
@@ -13,9 +14,9 @@ export const Route = createFileRoute("/locations")({
       { name: "description", content: "De-addiction & rehab centres across Delhi, Noida, Greater Noida, Ghaziabad, Faridabad and Gurugram. Affordable, psychiatrist-led care." },
       { property: "og:title", content: "Delhi NCR Locations | DeAddictify" },
       { property: "og:description", content: "Find affordable de-addiction help in your city across Delhi NCR." },
-      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/locations" },
+      { property: "og:url", content: `${SITE_URL}/locations` },
     ],
-    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/locations" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/locations` }],
   }),
   component: LocationsLayout,
 });
