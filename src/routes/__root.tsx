@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description: "Affordable Alcohol & Drug De-Addiction, Rehabilitation & Recovery Platform for Delhi NCR.",
           areaServed: ["Delhi", "Noida", "Greater Noida", "Ghaziabad", "Faridabad", "Gurugram"],
           medicalSpecialty: ["Addiction Medicine", "Psychiatry"],
-          telephone: "+91-9999999999",
+          telephone: "+91-8826134489",
         }),
       },
     ],

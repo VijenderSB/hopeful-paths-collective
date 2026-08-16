@@ -1,7 +1,7 @@
-export const PHONE = "+91-9999999999";
-export const PHONE_DISPLAY = "+91 99999 99999";
-export const WHATSAPP = "919999999999";
-export const WHATSAPP_MSG = "Hi%20DeAddictify%2C%20I%20would%20like%20a%20free%20confidential%20counselling.";
+export const PHONE = "+91-8826134489";
+export const PHONE_DISPLAY = "+91 88261 34489";
+export const WHATSAPP = "918826134489";
+export const WHATSAPP_MSG = "Hi%20DeAddictify%2C%20I%20want%20to%20take%20the%20first%20step%20toward%20recovery.%20Can%20we%20talk%20confidentially%3F";
 
 export const waLink = `https://wa.me/${WHATSAPP}?text=${WHATSAPP_MSG}`;
 export const telLink = `tel:${PHONE.replace(/[^+\d]/g, "")}`;
