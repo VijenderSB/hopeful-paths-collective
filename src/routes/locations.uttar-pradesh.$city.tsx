@@ -14,6 +14,7 @@ import {
   cityLocalSubstances,
 } from "@/lib/up-cities";
 import { CheckCircle2, Quote, Route as RouteIcon } from "lucide-react";
+import pageBanner from "@/assets/banner-locations.jpg";
 
 const SITE = "https://hopeful-paths-collective.lovable.app";
 
@@ -103,7 +104,7 @@ function UPCityPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero image={pageBanner}
         eyebrow={`Uttar Pradesh · ${city.region}`}
         title={`De-Addiction & Rehab Help for ${short} — Treatment at Delhi NCR Centres`}
         subtitle={`Confidential, psychiatrist-led alcohol and drug de-addiction for families in ${short}. Free assessment on call, admission to an affiliated Delhi NCR centre, and aftercare once the patient is back home.`}

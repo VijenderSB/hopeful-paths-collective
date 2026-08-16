@@ -5,6 +5,7 @@ import { PageHero, FinalCTA } from "@/components/site/Bits";
 import { LeadForm } from "@/components/site/LeadForm";
 import { telLink, waLink, PHONE_DISPLAY, GLOBAL_FAQ } from "@/lib/site";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import pageBanner from "@/assets/banner-contact.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="We're Here, 24×7" subtitle="Confidential counselling, admission assistance and emergency support across Delhi NCR." />
+      <PageHero image={pageBanner} eyebrow="Contact" title="We're Here, 24×7" subtitle="Confidential counselling, admission assistance and emergency support across Delhi NCR." />
       <section className="container-page py-16 grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
         <div className="space-y-4">
           <a href={telLink} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-primary">

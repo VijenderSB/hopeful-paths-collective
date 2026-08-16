@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/site/LeadForm";
 import { FAQ } from "@/components/site/FAQ";
 import { GLOBAL_FAQ, WHY_CHOOSE } from "@/lib/site";
 import { CheckCircle2 } from "lucide-react";
+import pageBanner from "@/assets/banner-about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,7 +33,7 @@ const BLOCKS = [
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About DeAddictify" title="Breaking Addiction. Rebuilding Lives." subtitle="DeAddictify helps individuals and families move from addiction and helplessness toward recovery, dignity and normal life." />
+      <PageHero image={pageBanner} eyebrow="About DeAddictify" title="Breaking Addiction. Rebuilding Lives." subtitle="DeAddictify helps individuals and families move from addiction and helplessness toward recovery, dignity and normal life." />
       <section className="container-page py-16">
         <div className="grid gap-6 md:grid-cols-2">
           {BLOCKS.map((b) => (

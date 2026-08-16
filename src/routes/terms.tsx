@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/Bits";
 import { LegalBody, LegalSection } from "@/components/site/Legal";
 import { PHONE_DISPLAY } from "@/lib/site";
+import pageBanner from "@/assets/banner-legal.jpg";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/terms")({
 function TermsPage() {
   return (
     <>
-      <PageHero eyebrow="Legal" title="Terms of Use" subtitle="Please read these terms carefully before using DeAddictify or requesting counselling, assessment or admission assistance." />
+      <PageHero image={pageBanner} eyebrow="Legal" title="Terms of Use" subtitle="Please read these terms carefully before using DeAddictify or requesting counselling, assessment or admission assistance." />
       <LegalBody updated="15 August 2026">
         <LegalSection title="1. About DeAddictify">
           <p>DeAddictify (“DeAddictify”, “we”, “us”, “our”) operates this website as an addiction treatment facilitation, counselling and recovery support platform serving Delhi NCR and families travelling from other parts of India, including Uttar Pradesh. We help families understand treatment options, arrange clinical assessment and coordinate admission with affiliated rehabilitation, psychiatric and de-addiction treatment establishments.</p>

@@ -5,6 +5,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA, CTARow } from "@/components/site/Bits";
 import { UP_TIER2, UP_TIER3, NCR_ALIASES } from "@/lib/up-cities";
 import { MapPin, ArrowRight } from "lucide-react";
+import pageBanner from "@/assets/banner-locations.jpg";
 
 const TITLE = "De-Addiction & Rehab for Uttar Pradesh Patients | Treatment in Delhi NCR | DeAddictify";
 const DESC =
@@ -68,7 +69,7 @@ function CityGrid({ cities }: { cities: { slug: string; name: string; region: st
 function UPIndex() {
   return (
     <>
-      <PageHero
+      <PageHero image={pageBanner}
         eyebrow="Uttar Pradesh · Treatment in Delhi NCR"
         title="De-Addiction Support For Every District Of Uttar Pradesh"
         subtitle="Structured residential rehabilitation is scarce across most UP districts. We assess patients locally and admit them to psychiatrist-led de-addiction centres in Delhi NCR, then continue aftercare once they are home."

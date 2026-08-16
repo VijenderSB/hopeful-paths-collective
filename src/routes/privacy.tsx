@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/Bits";
 import { LegalBody, LegalSection } from "@/components/site/Legal";
 import { PHONE_DISPLAY } from "@/lib/site";
+import pageBanner from "@/assets/banner-legal.jpg";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/privacy")({
 function PrivacyPage() {
   return (
     <>
-      <PageHero eyebrow="Legal" title="Privacy Policy" subtitle="Addiction enquiries are deeply personal. This page explains exactly what we collect, why, who can see it and how you stay in control." />
+      <PageHero image={pageBanner} eyebrow="Legal" title="Privacy Policy" subtitle="Addiction enquiries are deeply personal. This page explains exactly what we collect, why, who can see it and how you stay in control." />
       <LegalBody updated="15 August 2026">
         <LegalSection title="1. Our commitment">
           <p>DeAddictify treats every enquiry from a patient or family as confidential health information. This policy is written to be consistent with the Digital Personal Data Protection Act, 2023, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, the confidentiality provisions of the Mental Healthcare Act, 2017, and the Telemedicine Practice Guidelines, 2020, where online consultations are involved.</p>

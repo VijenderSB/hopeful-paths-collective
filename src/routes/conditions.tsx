@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero, SectionHeading, FinalCTA } from "@/components/site/Bits";
 import { CONDITIONS, GLOBAL_FAQ } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
+import pageBanner from "@/assets/banner-conditions.jpg";
 
 export const Route = createFileRoute("/conditions")({
   head: () => ({
@@ -26,7 +27,7 @@ function ConditionsLayout() {
 
   return (
     <>
-      <PageHero eyebrow="Conditions We Treat" title="Compassionate, Clinical Care For Every Addiction" subtitle="From early-stage dependence to dual diagnosis, our psychiatrist-led programs offer structured treatment and family support." />
+      <PageHero image={pageBanner} eyebrow="Conditions We Treat" title="Compassionate, Clinical Care For Every Addiction" subtitle="From early-stage dependence to dual diagnosis, our psychiatrist-led programs offer structured treatment and family support." />
       <section className="container-page py-16">
         <SectionHeading title="All Conditions" subtitle="Click a condition to learn more about symptoms, treatment options and recovery." />
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
