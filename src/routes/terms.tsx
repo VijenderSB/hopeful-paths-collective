@@ -13,8 +13,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:description", content: "Read the terms that govern use of the DeAddictify de-addiction and recovery support platform." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/terms" }],
   }),
   component: TermsPage,
 });

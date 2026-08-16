@@ -13,9 +13,9 @@ export const Route = createFileRoute("/success-stories")({
       { name: "description", content: "Read real recovery stories from individuals and families who rebuilt their lives with DeAddictify." },
       { property: "og:title", content: "Success Stories | DeAddictify" },
       { property: "og:description", content: "Real recovery stories from Delhi NCR families." },
-      { property: "og:url", content: "/success-stories" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/success-stories" },
     ],
-    links: [{ rel: "canonical", href: "/success-stories" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/success-stories" }],
   }),
   component: SuccessPage,
 });

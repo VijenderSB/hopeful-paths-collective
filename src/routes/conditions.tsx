@@ -13,9 +13,9 @@ export const Route = createFileRoute("/conditions")({
       { name: "description", content: "Comprehensive de-addiction & treatment for alcohol, drugs, cannabis, heroin, cocaine, prescription dependence and dual diagnosis across Delhi NCR." },
       { property: "og:title", content: "Conditions We Treat | DeAddictify" },
       { property: "og:description", content: "Alcohol, drugs, dual diagnosis and more — psychiatrist-led treatment in Delhi NCR." },
-      { property: "og:url", content: "/conditions" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/conditions" },
     ],
-    links: [{ rel: "canonical", href: "/conditions" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/conditions" }],
   }),
   component: ConditionsLayout,
 });

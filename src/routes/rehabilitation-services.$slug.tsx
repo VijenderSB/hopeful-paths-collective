@@ -21,9 +21,9 @@ export const Route = createFileRoute("/rehabilitation-services/$slug")({
         { name: "description", content: `Affordable ${name.toLowerCase()} as part of structured de-addiction care across Delhi NCR.` },
         { property: "og:title", content: `${name} | DeAddictify` },
         { property: "og:description", content: `${name} — process, benefits and outcomes.` },
-        { property: "og:url", content: `/rehabilitation-services/${loaderData?.service.slug}` },
+        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/rehabilitation-services/${loaderData?.service.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/rehabilitation-services/${loaderData?.service.slug}` }],
+      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/rehabilitation-services/${loaderData?.service.slug}` }],
     };
   },
   component: ServicePage,

@@ -15,8 +15,9 @@ export const Route = createFileRoute("/cities")({
       { property: "og:description", content: "Find de-addiction and rehabilitation support for your city across Delhi NCR and Uttar Pradesh." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/cities" },
     ],
-    links: [{ rel: "canonical", href: "/cities" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/cities" }],
   }),
   component: CitiesPage,
 });

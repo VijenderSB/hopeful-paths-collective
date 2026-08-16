@@ -14,9 +14,9 @@ export const Route = createFileRoute("/programs")({
       { name: "description", content: "14, 30, 60 & 90-day affordable de-addiction & rehabilitation programs starting from ₹5,999/day. Psychiatrist-led, family-focused." },
       { property: "og:title", content: "Programs & Pricing | DeAddictify" },
       { property: "og:description", content: "Affordable, structured de-addiction programs across Delhi NCR." },
-      { property: "og:url", content: "/programs" },
+      { property: "og:url", content: "https://hopeful-paths-collective.lovable.app/programs" },
     ],
-    links: [{ rel: "canonical", href: "/programs" }],
+    links: [{ rel: "canonical", href: "https://hopeful-paths-collective.lovable.app/programs" }],
   }),
   component: ProgramsPage,
 });

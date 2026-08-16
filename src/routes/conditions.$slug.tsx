@@ -21,9 +21,9 @@ export const Route = createFileRoute("/conditions/$slug")({
         { name: "description", content: `Affordable, psychiatrist-led ${name.toLowerCase()} treatment, rehabilitation and family support in Delhi NCR.` },
         { property: "og:title", content: `${name} Treatment | DeAddictify` },
         { property: "og:description", content: `Symptoms, warning signs, treatment options and recovery for ${name.toLowerCase()}.` },
-        { property: "og:url", content: `/conditions/${loaderData?.condition.slug}` },
+        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/conditions/${loaderData?.condition.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/conditions/${loaderData?.condition.slug}` }],
+      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/conditions/${loaderData?.condition.slug}` }],
     };
   },
   component: ConditionPage,

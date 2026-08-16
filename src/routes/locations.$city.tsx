@@ -21,9 +21,9 @@ export const Route = createFileRoute("/locations/$city")({
         { name: "description", content: `Affordable alcohol & drug de-addiction, rehabilitation and recovery support in ${name}. Psychiatrist-led, family-focused care.` },
         { property: "og:title", content: `De-Addiction Centre in ${name} | DeAddictify` },
         { property: "og:description", content: `Affordable rehab and recovery programs in ${name}.` },
-        { property: "og:url", content: `/locations/${loaderData?.city.slug}` },
+        { property: "og:url", content: `https://hopeful-paths-collective.lovable.app/locations/${loaderData?.city.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/locations/${loaderData?.city.slug}` }],
+      links: [{ rel: "canonical", href: `https://hopeful-paths-collective.lovable.app/locations/${loaderData?.city.slug}` }],
     };
   },
   component: CityPage,
