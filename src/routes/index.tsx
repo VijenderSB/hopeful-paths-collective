@@ -95,78 +95,37 @@ function HomePage() {
       {/* RECLAIM 360 USP */}
       <section className="relative overflow-hidden hero-gradient text-white">
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
-        <div className="container-page relative z-10 py-16 md:py-20">
+        <div className="container-page relative z-10 py-12 md:py-14">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/12 border border-white/25 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/90">
               Our Approach
             </div>
-            <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Introducing <span className="text-white">RECLAIM 360™</span>
+            <h2 className="mt-4 text-2xl md:text-4xl font-bold leading-tight">
+              Introducing RECLAIM 360™
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-white/90 leading-relaxed">
-              Beyond De-Addiction. Rebuilding the Person, Family & Life.
-            </p>
-            <p className="mt-4 text-white/80 leading-relaxed">
-              Addiction affects much more than the body. It changes how a person thinks, feels, behaves, works, communicates and connects with the people they love. That is why our approach goes beyond detoxification and medical treatment.
+            <p className="mt-3 text-base md:text-lg text-white/90">
+              Beyond De-Addiction. Rebuilding the Person, Family &amp; Life.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <div className="rounded-[2rem] bg-white/10 backdrop-blur border border-white/15 p-6 text-center">
-              <p className="text-xs font-semibold uppercase tracking-wider text-white/60">We Don&apos;t Just Ask</p>
-              <p className="mt-2 text-xl md:text-2xl font-bold text-white">&ldquo;How do we stop the substance?&rdquo;</p>
-            </div>
-            <div className="rounded-[2rem] bg-white/15 backdrop-blur border border-white/30 p-6 text-center">
-              <p className="text-xs font-semibold uppercase tracking-wider text-white/70">We Also Ask</p>
-              <p className="mt-2 text-xl md:text-2xl font-bold text-white">&ldquo;What needs to change so the person can build a life that supports recovery?&rdquo;</p>
-            </div>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { i: HeartPulse, n: "01", t: "Medical Recovery", d: "Assessment, withdrawal management, physical stabilisation and medical supervision." },
-              { i: Brain, n: "02", t: "Mind Recovery", d: "Psychiatric assessment for depression, anxiety, sleep problems and co-occurring conditions." },
-              { i: RefreshCw, n: "03", t: "Behaviour Recovery", d: "Understanding triggers, cravings and patterns while building healthier coping mechanisms." },
-              { i: Smile, n: "04", t: "Emotional Recovery", d: "Working on anger, stress, guilt, shame, impulsivity and emotional regulation." },
-              { i: Dumbbell, n: "05", t: "Physical Rebuilding", d: "Restoring sleep, nutrition, exercise, daily routine and overall physical wellbeing." },
-              { i: Users, n: "06", t: "Family Recovery", d: "Rebuilding communication, trust and healthy boundaries with loved ones." },
-              { i: Briefcase, n: "07", t: "Life Reintegration", d: "Preparing to return to family, work, relationships and a productive daily routine." },
-              { i: ShieldCheck, n: "08", t: "Recovery Continuity", d: "Relapse-prevention planning, follow-up and continued family support beyond treatment." },
-            ].map(({ i: Icon, n, t, d }) => (
-              <div key={n} className="rounded-[2rem] bg-white/10 backdrop-blur border border-white/15 p-6 transition-all duration-300 hover:bg-white/15 hover:border-white/30">
-                <div className="flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-white">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60">Dimension {n}</span>
-                </div>
-                <h3 className="mt-4 text-lg font-bold text-white">{t}</h3>
-                <p className="mt-1 text-sm text-white/80 leading-relaxed">{d}</p>
-              </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold text-white">
+            {["STABILISE", "UNDERSTAND", "HEAL", "REBUILD", "RECONNECT", "REINTEGRATE", "SUSTAIN"].map((step, idx, arr) => (
+              <span key={step} className="flex items-center gap-2">
+                <span className="rounded-full bg-white/15 px-3 py-1">{step}</span>
+                {idx < arr.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-white/50" />}
+              </span>
             ))}
           </div>
 
-          <div className="mt-14 max-w-4xl mx-auto rounded-[2rem] bg-white/10 backdrop-blur border border-white/15 p-6 md:p-8">
-            <p className="text-center text-sm font-semibold uppercase tracking-wider text-white/70">From Addiction to Life Again</p>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:gap-3 text-sm md:text-base font-semibold text-white">
-              {["STABILISE", "UNDERSTAND", "HEAL", "REBUILD", "RECONNECT", "REINTEGRATE", "SUSTAIN"].map((step, idx, arr) => (
-                <span key={step} className="flex items-center gap-2 md:gap-3">
-                  <span className="rounded-full bg-white/15 px-3 py-1">{step}</span>
-                  {idx < arr.length - 1 && <ArrowRight className="h-4 w-4 text-white/50" />}
-                </span>
-              ))}
-            </div>
-            <p className="mt-6 text-center text-white/80 leading-relaxed">
-              Treatment should not end when the person stops using alcohol or drugs. The larger goal is to help the individual return to family, work, relationships and everyday life with healthier coping skills and a structured recovery plan.
-            </p>
-            <div className="mt-6 text-center">
-              <p className="text-xl md:text-2xl font-bold text-white">RECLAIM 360™</p>
-              <p className="text-sm md:text-base text-white/90">Not Just Freedom From Addiction. A Structured Journey Back to Life.</p>
-            </div>
+          <div className="mt-8 text-center">
+            <Link to="/reclaim-360" className="inline-flex h-11 items-center gap-2 rounded-2xl bg-white px-6 text-sm font-semibold text-primary hover:opacity-95">
+              Explore RECLAIM 360™ <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
+
+
 
       {/* PROBLEM */}
       <section className="container-page py-16">
